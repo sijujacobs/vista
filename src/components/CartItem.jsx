@@ -1,30 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { connect } from "react-redux";
-import { removeItem } from "../redux/actions/index";
+import { editCartItem, removeCartItem } from "../redux/actions/index";
 
 const CartItem = (props) => {
-  console.log(" CartItem :: props : ", props);
-  const { updateInvoice } = props;
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [quantity, setQuantity] = useState(1);
-  const [unitPrice, setUnitPrice] = useState(0);
+  const { cartItem, editCartItem } = props;
 
-  useEffect(() => {
-    setTotalPrice(quantity * unitPrice);
-    updateInvoice(totalPrice);
-  }, [quantity, unitPrice, totalPrice, updateInvoice]);
-
-  const quantityChangeHandler = (tParam) => (event) => {
-    setQuantity(event.target.value);
+  const updateItem = (inputData) => {
+    let editedItem = {
+      product_id: cartItem.product_id,
+      product_name: cartItem.product_name,
+      product_code: cartItem.product_code,
+      product_description: cartItem.product_description,
+      product_price: inputData.product_price,
+      quantity: inputData.quantity,
+      total_price: inputData.product_price * inputData.quantity,
+    };
+    editCartItem(editedItem);
   };
 
-  const unitPriceChangeHandler = (tParam) => (event) => {
-    setUnitPrice(event.target.value);
+  const inputChangeHandler = (e) => {
+    let inputData = {
+      quantity: cartItem.quantity,
+      product_price: cartItem.product_price,
+    };
+    e.target.classList.contains("quantity")
+      ? (inputData.quantity = e.target.value)
+      : (inputData.product_price = e.target.value);
+    updateItem(inputData);
   };
 
   const removeItemHandler = (selectedProduct) => {
-    props.removeItem(selectedProduct);
+    props.removeCartItem(selectedProduct);
   };
   return (
     <div className="cartItem">
@@ -37,28 +44,25 @@ const CartItem = (props) => {
           {props.cartItem.product_description}
         </span>
       </div>
-      <div className="quantity">
+      <div className="quantityRow">
         <input
-          className="numericStepper"
+          className="numericStepper quantity"
           type="number"
-          onChange={quantityChangeHandler(props.cartItem)}
+          onChange={inputChangeHandler}
         />
       </div>
-      <div className="unitPrice">
+      <div className="unitPriceRow">
         <input
-          className="numericStepper"
+          className="numericStepper unitPrice"
           type="number"
-          onChange={unitPriceChangeHandler(props.cartItem)}
+          onChange={inputChangeHandler}
         />
       </div>
       <div className="totalPrice">
-        <span> {totalPrice}</span>
+        <h4>{props.cartItem.total_price}</h4>
       </div>
       <div className="action">
-        <span
-          className="removeIcon"
-          onClick={() => removeItemHandler(props.cartItem)}
-        >
+        <span className="removeIcon" onClick={removeItemHandler}>
           &#10005;
         </span>
       </div>
@@ -68,7 +72,9 @@ const CartItem = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    removeItem: (selectedProduct) => dispatch(removeItem(selectedProduct)),
+    editCartItem: (selectedProduct) => dispatch(editCartItem(selectedProduct)),
+    removeCartItem: (selectedProduct) =>
+      dispatch(removeCartItem(selectedProduct)),
   };
 };
 

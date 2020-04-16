@@ -31,7 +31,7 @@ const Header = (props) => {
       </div>
       <div className="statusSection">
         <span className="cartStatus" onClick={() => cartStatusClickHandler()}>
-          {"Cart : " + props.cartItems.length + " Items"}
+          {"Cart : 000 Items"}
         </span>
       </div>
     </div>

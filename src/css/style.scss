@@ -62,7 +62,7 @@ span.removeIcon {
   padding: 3px;
   text-align: right;
   width: 6em;
-  height: 1.6em;
+  height: 1.3em;
   border-radius: 5px;
   border: 1px solid #555;
 }
@@ -126,4 +126,30 @@ span.removeIcon {
   border-radius: 5px;
   background-color: $magentaColor;
   color: #fff;
+}
+
+.cartFooter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 0.5em;
+}
+
+.paymentSection {
+  display: grid;
+  align-items: end;
+  padding: 15px;
+}
+
+.amountSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 0.5em;
+
+  .labelSection,
+  .valueSection {
+    div {
+      height: 15px;
+      padding: 5px;
+    }
+  }
 }

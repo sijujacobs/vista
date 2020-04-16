@@ -4,9 +4,6 @@ import { addToCart } from "../redux/actions/index";
 
 const ProductDetails = (props) => {
   const addToCartHandler = (selectedProduct) => {
-    // console.log("1 addToCartHandler :: selectedProduct : ", selectedProduct);
-    // console.log("2 addToCartHandler :: props.cartItems : ", props.cartItems);
-
     let itemFound = props.cartItems.find(function (item) {
       return item.product_id === selectedProduct.product_id;
     });
@@ -56,4 +53,3 @@ const connectedProductDetails = connect(
   mapDispatchToProps
 )(ProductDetails);
 export default connectedProductDetails;
-// export default ProductDetails;
