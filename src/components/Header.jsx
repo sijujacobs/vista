@@ -3,36 +3,26 @@ import { NavLink } from "react-router-dom";
 
 import { connect } from "react-redux";
 const Header = (props) => {
-  const cartStatusClickHandler = () => {
-    let windowWidth = document.documentElement.clientWidth;
-    var cartContainer = document.getElementById("cart");
-    var cartBounds = cartContainer.getBoundingClientRect();
-    if (windowWidth < 600) {
-      window.scrollTo(0, cartBounds.top ? cartBounds.top : 0);
-    }
-  };
-
   return (
-    <div className="header">
-      <div className="menuBar">
-        <ul className="navMenu">
-          <li>
-            <NavLink exact to="/">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/invoice">Products</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-        </ul>
+    <div className="nav">
+      <input type="checkbox" id="nav-check" />
+      <div className="nav-header">
+        <div className="nav-title">VISTABIOMED</div>
       </div>
-      <div className="statusSection">
-        <span className="cartStatus" onClick={() => cartStatusClickHandler()}>
-          {"Cart : 000 Items"}
-        </span>
+      <div className="nav-btn">
+        <label htmlFor="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div className="nav-links">
+        <NavLink exact to="/">
+          Home
+        </NavLink>
+        <NavLink to="/invoice">Products</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </div>
     </div>
   );

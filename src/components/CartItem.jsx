@@ -59,7 +59,7 @@ const CartItem = (props) => {
         />
       </div>
       <div className="totalPrice">
-        <h4>{props.cartItem.total_price}</h4>
+        <div>{props.cartItem.total_price}</div>
       </div>
       <div className="action">
         <span className="removeIcon" onClick={removeItemHandler}>

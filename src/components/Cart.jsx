@@ -14,12 +14,10 @@ const Cart = (props) => {
           discount: 4,
         },
       };
-      // console.log(" Cart :: useEffect : invoiceData  ", invoiceData);
       updateInvoiceInfo(invoiceData);
     }
   }, [cartItems, updateInvoiceInfo]);
   const inputChangeHandler = (e) => {
-    // console.log("Cart  ::inputChangeHandler : ");
     let invoiceData = {
       cartItems: cartItems,
       invoiceInfo: {
@@ -46,7 +44,7 @@ const Cart = (props) => {
       {cartItems &&
         cartItems.length > 0 &&
         cartItems.map((p) => <CartItem key={p.product_id} cartItem={p} />)}
-      <div className="cartFooter">
+      <div className="cartBody">
         <div className="paymentSection">
           <div className="payment">
             Payment Method : {invoiceInfo.paymentMethod}
@@ -70,14 +68,19 @@ const Cart = (props) => {
             </div>
             <div>
               <input
-                className="numericStepper discount"
+                className="numericStepper discount hidden"
                 type="number"
                 onChange={inputChangeHandler}
               />
             </div>
 
-            <p>{invoiceInfo.grandTotal}</p>
+            <div>{invoiceInfo.grandTotal}</div>
           </div>
+        </div>
+      </div>
+      <div className="cartFooter">
+        <div>
+          <button className="invoiceButton">Create Invoice</button>
         </div>
       </div>
     </div>

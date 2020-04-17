@@ -6,16 +6,6 @@ import {
   UPDATE_INVOICE_INFO,
 } from "../constants/index";
 
-// {
-//   product_id: 0,
-//   product_name: "",
-//   product_code: "",
-//   product_description: "",
-//   product_price: 0,
-//   quantity: 0,
-//   total_price: 0,
-// },
-
 const initialState = {
   cartItems: [],
   invoiceInfo: {
@@ -27,7 +17,6 @@ const initialState = {
   },
 };
 
-// const setInvoiceInfo = () => {};
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_CART_ITEMS:
@@ -52,7 +41,6 @@ const cartReducer = (state = initialState, action) => {
         }
       });
 
-      // return editedCartItems;
       return Object.assign({}, state, {
         cartItems: editedCartItems,
       });
@@ -63,8 +51,6 @@ const cartReducer = (state = initialState, action) => {
         ),
       });
     case UPDATE_INVOICE_INFO:
-      // console.log("CartReducer :: UPDATE_INVOICE_INFO : ", action);
-      //invoiceInfo: action.payloa.invoiceInfo
       return Object.assign({}, state, {
         invoiceInfo: action.payload,
       });
