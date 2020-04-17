@@ -10,10 +10,15 @@ import {
 import axios from "axios";
 
 export const getVistaProducts = () => {
+  const baseURL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:8880/api/vista/"
+      : "https://www.vistabiomed.com/api/vista/";
+
   return (dispatch) => {
     dispatch(fetchProductsBegin());
     return axios
-      .get("http://localhost:8880/api/vista/product/read.php")
+      .get(baseURL + "product/read.php")
       .then((response) => {
         dispatch(fetchProductsSuccess(response.data.products));
       })

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../redux/actions/index";
+import { addToCart } from "../../redux/actions/index";
 
 const ProductDetails = (props) => {
   const addToCartHandler = (selectedProduct) => {
@@ -23,9 +23,6 @@ const ProductDetails = (props) => {
           <span className="productCode"> - {props.product.product_code}</span>
         </div>
         <div className="productDesc">{props.product.product_description}</div>
-        <div className="productPrice">
-          <span>Price : {props.product.product_price}</span>
-        </div>
         <div className="customCode">
           <span>Custom Code : {props.product.customs_code}</span>
         </div>
@@ -42,6 +39,12 @@ const ProductDetails = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.cartReducer.cartItems,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (selectedProduct) => dispatch(addToCart(selectedProduct)),
@@ -49,7 +52,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const connectedProductDetails = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ProductDetails);
 export default connectedProductDetails;

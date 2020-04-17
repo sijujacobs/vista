@@ -5,7 +5,6 @@ $magentaColor: rgb(94, 18, 92);
 }
 
 // ---------------NAVIGATION MENU
-
 .nav {
   height: 50px;
   width: 100%;
@@ -110,163 +109,21 @@ button {
   }
 }
 
-.shoppingContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 0.5em;
-}
-
-.productList,
-.cart {
-  border: 1px solid #555;
-  border-radius: 5px;
-  margin: 3px;
-  padding: 5px;
-}
-
-.cartHeader {
-  display: grid;
-  grid-template-columns: 320px 70px 70px 70px 70px;
-  grid-gap: 0.6em;
-}
-.cartItem {
-  display: grid;
-  grid-template-columns: 320px 70px 70px 70px 70px;
-  grid-gap: 0.5rem;
-  padding: 5px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  margin: 3px;
-
-  .productSection {
-    display: grid;
-    grid-template-columns: 1fr 20px 50px 50px;
-  }
-}
-span.removeIcon {
-  content: "\2715";
-  font-weight: bold;
-  color: red;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  &:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-  }
-}
-.numericStepper {
-  padding: 3px;
-  text-align: right;
-  width: 6em;
-  height: 1.3em;
-  border-radius: 5px;
-  border: 1px solid #555;
-}
-.totalPrice {
-  text-align: right;
-}
-.searchSection {
-  display: grid;
-  grid-template-columns: 80% 20%;
-  padding: 5px;
-  .searchInput {
-    border: 1px solid #555;
-    border-radius: 5px;
-    height: 20px;
-    margin-right: 5px;
-    padding-left: 10px;
-    color: $magentaColor;
-  }
-}
-.productDetails {
-  display: grid;
-  grid-template-columns: 10% minmax(200px, 75%) minmax(100px, 10%);
-  grid-template-areas: "imageSection infoSection buttonSection";
-  margin: 3px;
-  border: 1px solid #555;
-  border-radius: 5px;
-}
-
-.imageSection {
-  grid-area: imageSection;
-}
-.infoSection {
-  grid-area: infoSection;
-  padding: 5px;
-}
-
-.productName {
-  font-weight: bold;
-  color: $magentaColor;
-}
-.productDesc,
-.productCode,
-.productPrice,
-.customCode {
-  font-size: 0.8em;
-}
-.buttonSection {
-  grid-area: buttonSection;
-  padding: 5px;
-  display: grid;
-  align-items: center;
-  justify-content: right;
-}
-
-.searchSection,
-.cartHeader,
-.cartBody,
-.cartFooter {
-  padding: 10px;
-  margin: 3px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: $magentaColor;
-  color: #fff;
-}
-.cartBody {
-  padding: 15px;
-}
-.cartFooter {
-  display: grid;
-  justify-items: end;
-
-  button {
-    width: 150px;
-    height: 30px;
-    font-size: 12pt;
-    font-weight: bold;
-    color: $magentaColor;
-  }
-}
-
-.cartBody {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 0.5em;
-}
-
-.paymentSection {
-  display: grid;
-  align-items: end;
-  padding: 15px;
-}
-
-.amountSection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-gap: 0.2em;
-
-  .labelSection,
-  .valueSection {
-    div {
-      height: 20px;
-      padding: 5px;
-    }
-  }
-}
-
 .hidden {
   visibility: hidden;
+}
+
+.printContainer {
+  background: rgb(204, 204, 204);
+}
+.printArea {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+.printArea[size="A4"] {
+  width: 21cm;
+  height: 29.7cm;
 }

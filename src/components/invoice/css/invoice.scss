@@ -1,0 +1,96 @@
+$magentaColor: rgb(94, 18, 92);
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+.invoiceDetails {
+  .title {
+    text-align: center;
+    color: $magentaColor;
+  }
+  .infoSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 0.5em;
+    border-top: 1px solid $magentaColor;
+  }
+
+  .addressSection {
+    .txtAddress {
+      border: 1px solid $magentaColor;
+      border-radius: 3px;
+      padding: 5px;
+    }
+  }
+  .itemSection {
+    border-top: 1px solid $magentaColor;
+    padding: 10px 50px 10px 50px;
+    .invoiceItem,
+    .invoiceItemHeader {
+      display: grid;
+      grid-template-columns: 1fr 100px 100px 100px;
+      grid-gap: 0.5rem;
+      padding: 5px;
+      border-bottom: 1px solid #e1e1e1;
+      margin: 3px;
+    }
+
+    .invoiceItem,
+    .invoiceItemHeader {
+      .rightAlign {
+        text-align: right;
+      }
+    }
+  }
+  .paymentSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 0.5em;
+    border-bottom: 1px solid $magentaColor;
+    padding: 10px 50px 10px 50px;
+    .rightSection {
+      .fieldRow {
+        text-align: right;
+      }
+    }
+  }
+
+  .actionSection {
+    display: grid;
+    justify-content: end;
+    padding: 10px;
+    .button {
+      margin: 3px;
+    }
+  }
+  .leftSection {
+    padding: 10px;
+    display: grid;
+    justify-content: start;
+  }
+  .rightSection {
+    padding: 10px;
+    display: grid;
+    justify-content: end;
+  }
+
+  .fieldRow {
+    margin: 3px;
+    width: 300px;
+    span.longLabel {
+      width: 150px;
+      display: inline-block;
+    }
+    label {
+      width: 100px;
+      display: inline-block;
+    }
+    input {
+      width: 200px;
+      height: 25px;
+      border: 1px solid #666;
+      border-radius: 3px;
+    }
+  }
+}

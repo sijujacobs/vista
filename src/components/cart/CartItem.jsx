@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { editCartItem, removeCartItem } from "../redux/actions/index";
+import { editCartItem, removeCartItem } from "../../redux/actions/index";
 
 const CartItem = (props) => {
   const { cartItem, editCartItem } = props;

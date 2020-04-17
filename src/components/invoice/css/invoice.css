@@ -1,0 +1,115 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+.invoiceDetails .title {
+  text-align: center;
+  color: #5e125c;
+}
+
+.invoiceDetails .infoSection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 0.5em;
+  border-top: 1px solid #5e125c;
+}
+
+.invoiceDetails .addressSection .txtAddress {
+  border: 1px solid #5e125c;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.invoiceDetails .itemSection {
+  border-top: 1px solid #5e125c;
+  padding: 10px 50px 10px 50px;
+}
+
+.invoiceDetails .itemSection .invoiceItem,
+.invoiceDetails .itemSection .invoiceItemHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 100px 100px 100px;
+      grid-template-columns: 1fr 100px 100px 100px;
+  grid-gap: 0.5rem;
+  padding: 5px;
+  border-bottom: 1px solid #e1e1e1;
+  margin: 3px;
+}
+
+.invoiceDetails .itemSection .invoiceItem .rightAlign,
+.invoiceDetails .itemSection .invoiceItemHeader .rightAlign {
+  text-align: right;
+}
+
+.invoiceDetails .paymentSection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 0.5em;
+  border-bottom: 1px solid #5e125c;
+  padding: 10px 50px 10px 50px;
+}
+
+.invoiceDetails .paymentSection .rightSection .fieldRow {
+  text-align: right;
+}
+
+.invoiceDetails .actionSection {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 10px;
+}
+
+.invoiceDetails .actionSection .button {
+  margin: 3px;
+}
+
+.invoiceDetails .leftSection {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.invoiceDetails .rightSection {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.invoiceDetails .fieldRow {
+  margin: 3px;
+  width: 300px;
+}
+
+.invoiceDetails .fieldRow span.longLabel {
+  width: 150px;
+  display: inline-block;
+}
+
+.invoiceDetails .fieldRow label {
+  width: 100px;
+  display: inline-block;
+}
+
+.invoiceDetails .fieldRow input {
+  width: 200px;
+  height: 25px;
+  border: 1px solid #666;
+  border-radius: 3px;
+}
+/*# sourceMappingURL=invoice.css.map */

@@ -7,7 +7,7 @@ const Header = (props) => {
     <div className="nav">
       <input type="checkbox" id="nav-check" />
       <div className="nav-header">
-        <div className="nav-title">VISTABIOMED</div>
+        <div className="nav-title">VISTA BIOMED</div>
       </div>
       <div className="nav-btn">
         <label htmlFor="nav-check">
@@ -21,7 +21,7 @@ const Header = (props) => {
         <NavLink exact to="/">
           Home
         </NavLink>
-        <NavLink to="/invoice">Products</NavLink>
+        <NavLink to="/products">Products</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </div>
     </div>

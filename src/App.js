@@ -1,8 +1,8 @@
 import React from "react";
 import { HashRouter } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import BodyContent from "./components/BodyContent";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import BodyContent from "./components/common/BodyContent";
 
 import "./css/style.css";
 

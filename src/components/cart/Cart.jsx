@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CartItem from "./CartItem";
-import { updateInvoiceInfo } from "../redux/actions/index";
+import { updateInvoiceInfo } from "../../redux/actions/index";
+
+import { NavLink } from "react-router-dom";
+import "./css/cart.css";
 
 const Cart = (props) => {
   const { cartItems, invoiceInfo, updateInvoiceInfo } = props;
@@ -30,6 +33,8 @@ const Cart = (props) => {
       : (invoiceData.invoiceInfo.discount = e.target.value);
     updateInvoiceInfo(invoiceData);
   };
+
+  // const printInvoiceHandler = (e) => {};
 
   return (
     <div id="cart" className="cart">
@@ -79,8 +84,8 @@ const Cart = (props) => {
         </div>
       </div>
       <div className="cartFooter">
-        <div>
-          <button className="invoiceButton">Create Invoice</button>
+        <div className={invoiceInfo.grandTotal > 0 ? "show" : "hide"}>
+          <NavLink to="/invoice">Create Invoice</NavLink>
         </div>
       </div>
     </div>

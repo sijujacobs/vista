@@ -1,0 +1,75 @@
+$magentaColor: rgb(94, 18, 92);
+
+* {
+  box-sizing: border-box;
+}
+
+.shoppingContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 0.5em;
+}
+.sectionHeader {
+  text-align: center;
+  color: $magentaColor;
+}
+.searchSection {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding: 10px;
+  margin: 3px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: $magentaColor;
+  color: #fff;
+  .searchInput {
+    border: 1px solid #555;
+    border-radius: 5px;
+    height: 25px;
+    margin-right: 5px;
+    padding-left: 10px;
+    color: $magentaColor;
+  }
+}
+
+.productList {
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 3px;
+  padding: 5px;
+}
+
+.productDetails {
+  display: grid;
+  grid-template-columns: 10% minmax(200px, 75%) minmax(100px, 10%);
+  grid-template-areas: "imageSection infoSection buttonSection";
+  margin: 3px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+}
+
+.imageSection {
+  grid-area: imageSection;
+}
+.infoSection {
+  grid-area: infoSection;
+  padding: 5px;
+}
+.productName {
+  font-weight: bold;
+  color: $magentaColor;
+}
+
+.productDesc,
+.productCode,
+.productPrice,
+.customCode {
+  font-size: 0.8em;
+}
+.buttonSection {
+  grid-area: buttonSection;
+  padding: 5px;
+  display: grid;
+  align-items: center;
+  justify-content: right;
+}
