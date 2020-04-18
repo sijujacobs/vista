@@ -51,35 +51,41 @@ const Cart = (props) => {
         cartItems.map((p) => <CartItem key={p.product_id} cartItem={p} />)}
       <div className="cartBody">
         <div className="paymentSection">
-          <div className="payment">
-            Payment Method : {invoiceInfo.paymentMethod}
+          <div className="leftSection">
+            <p className="fieldRow">
+              <span className="longLabel">Payment Method</span>
+              <label>PayPal</label>
+            </p>
           </div>
-        </div>
-        <div className="amountSection">
-          <div className="labelSection">
-            <div>Sub Total </div>
-            <div>VAT </div>
-            <div>Discount</div>
-            <div>Grand Total</div>
-          </div>
-          <div className="valueSection">
-            <div>{invoiceInfo.subTotal}</div>
-            <div>
-              <input
-                className="numericStepper vat"
-                type="number"
-                onChange={inputChangeHandler}
-              />
-            </div>
-            <div>
-              <input
-                className="numericStepper discount hidden"
-                type="number"
-                onChange={inputChangeHandler}
-              />
-            </div>
-
-            <div>{invoiceInfo.grandTotal}</div>
+          <div className="rightSection">
+            <p className="fieldRow">
+              <label>Sub Total</label>
+              <label>{invoiceInfo.subTotal}</label>
+            </p>
+            <p className="fieldRow">
+              <label>VAT</label>
+              <label>
+                <input
+                  className="numericStepper vat"
+                  type="number"
+                  onChange={inputChangeHandler}
+                />
+              </label>
+            </p>
+            <p className="fieldRow">
+              <label>Discount</label>
+              <label>
+                <input
+                  className="numericStepper discount hidden"
+                  type="number"
+                  onChange={inputChangeHandler}
+                />
+              </label>
+            </p>
+            <p className="fieldRow">
+              <label>Grand Total</label>
+              <label>{invoiceInfo.grandTotal}</label>
+            </p>
           </div>
         </div>
       </div>

@@ -25,6 +25,8 @@ $magentaColor: rgb(94, 18, 92);
   }
   .itemSection {
     border-top: 1px solid $magentaColor;
+    border-bottom: 1px solid $magentaColor;
+
     padding: 10px 50px 10px 50px;
     .invoiceItem,
     .invoiceItemHeader {

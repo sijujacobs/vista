@@ -3,6 +3,9 @@ $magentaColor: rgb(94, 18, 92);
 * {
   box-sizing: border-box;
 }
+.bodyContent {
+  height: 90vh;
+}
 
 // ---------------NAVIGATION MENU
 .nav {
@@ -126,4 +129,11 @@ button {
 .printArea[size="A4"] {
   width: 21cm;
   height: 29.7cm;
+}
+.footer {
+  background-color: $magentaColor;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1px;
 }

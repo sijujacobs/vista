@@ -26,6 +26,7 @@
 
 .invoiceDetails .itemSection {
   border-top: 1px solid #5e125c;
+  border-bottom: 1px solid #5e125c;
   padding: 10px 50px 10px 50px;
 }
 

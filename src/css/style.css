@@ -3,6 +3,10 @@
           box-sizing: border-box;
 }
 
+.bodyContent {
+  height: 90vh;
+}
+
 .nav {
   height: 50px;
   width: 100%;
@@ -129,5 +133,13 @@ button:hover {
 .printArea[size="A4"] {
   width: 21cm;
   height: 29.7cm;
+}
+
+.footer {
+  background-color: #5e125c;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1px;
 }
 /*# sourceMappingURL=style.css.map */

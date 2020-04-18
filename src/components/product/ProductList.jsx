@@ -72,15 +72,17 @@ const ProductList = (props) => {
           />
           <button className="cancelButton">Clear</button>
         </div>
-        {searchResults &&
-          searchResults.length > 0 &&
-          searchResults.map((p) => (
-            <ProductDetails
-              key={p.product_id}
-              product={p}
-              cartItems={props.cartItems}
-            />
-          ))}
+        <div className="scrollArea">
+          {searchResults &&
+            searchResults.length > 0 &&
+            searchResults.map((p) => (
+              <ProductDetails
+                key={p.product_id}
+                product={p}
+                cartItems={props.cartItems}
+              />
+            ))}
+        </div>
       </div>
     );
   }

@@ -3,137 +3,147 @@ $magentaColor: rgb(94, 18, 92);
 * {
   box-sizing: border-box;
 }
-.sectionHeader {
-  text-align: center;
-  color: $magentaColor;
-}
 .cart {
   border: 1px solid #555;
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
-}
-
-.show {
-  visibility: visible;
-}
-.hide {
-  visibility: hidden;
-}
-
-.cartItem {
-  display: grid;
-  grid-template-columns: 320px 70px 70px 70px 70px;
-  grid-gap: 0.5rem;
-  padding: 5px 0 0 25px;
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
-  margin: 3px;
-
-  .productSection {
-    display: grid;
-    grid-template-columns: 1fr 20px 50px 50px;
-  }
-  .action {
-    text-align: right;
-    padding: 5px;
-  }
-}
-span.removeIcon {
-  content: "\2715";
-  font-weight: bold;
-  color: red;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  &:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-  }
-}
-.numericStepper {
-  padding: 3px;
-  text-align: right;
-  width: 6em;
-  height: 1.5em;
-  border-radius: 5px;
-  border: 1px solid #555;
-}
-.totalPrice {
-  text-align: right;
-}
-.cartHeader {
-  display: grid;
-  grid-template-columns: 320px 70px 70px 70px 70px;
-  grid-gap: 0.6em;
-  padding: 5px 0 5px 25px;
-}
-.cartHeader,
-.cartBody,
-.cartFooter {
-  margin: 3px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  background-color: $magentaColor;
-  color: #fff;
-}
-
-.cartBody {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 0.5em;
-  padding: 15px;
-}
-
-.cartFooter {
-  display: grid;
-  justify-items: end;
-
-  button {
-    width: 150px;
-    height: 30px;
-    font-size: 12pt;
-    font-weight: bold;
-    color: $magentaColor;
-    &:hover {
-      background-color: rgb(72, 22, 48);
-      color: #fff;
-    }
-  }
-  a {
-    width: 150px;
-    height: 30px;
-    background: #fff;
-    font-size: 12pt;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    padding: 5px;
-    border: 1px solid $magentaColor;
-    border-radius: 5px;
+  .sectionHeader {
     text-align: center;
-    &:hover {
-      background-color: rgb(58, 38, 49);
+    color: $magentaColor;
+  }
+
+  .show {
+    visibility: visible;
+  }
+  .hide {
+    visibility: hidden;
+  }
+
+  .cartItem {
+    display: grid;
+    grid-template-columns: 285px 75px 75px 65px 30px;
+    grid-gap: 0.5rem;
+    padding: 5px 0 0 25px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    margin: 3px;
+
+    .productSection {
+      display: grid;
+      grid-template-columns: 1fr 20px 50px 50px;
+    }
+    .action {
+      text-align: right;
+      padding: 5px;
     }
   }
-}
+  span.removeIcon {
+    content: "\2715";
+    font-weight: bold;
+    color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    &:hover {
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
+  }
+  .numericStepper {
+    padding: 3px;
+    text-align: right;
+    width: 6em;
+    height: 1.8em;
+    border-radius: 5px;
+    border: 1px solid #555;
+  }
+  .totalPrice {
+    text-align: right;
+  }
+  .cartHeader {
+    display: grid;
+    grid-template-columns: 285px 70px 70px 70px 60px;
+    grid-gap: 0.6em;
+    padding: 5px 0 5px 25px;
+  }
+  .cartHeader,
+  .cartBody,
+  .cartFooter {
+    margin: 3px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: $magentaColor;
+    color: #fff;
+  }
 
-.paymentSection {
-  display: grid;
-  align-items: end;
-  padding: 15px;
-}
+  .cartBody {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0.5em;
+    padding: 15px;
+  }
 
-.amountSection {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-gap: 0.2em;
+  .cartFooter {
+    display: grid;
+    justify-items: end;
 
-  .labelSection,
-  .valueSection {
-    div {
-      height: 20px;
+    button {
+      width: 150px;
+      height: 30px;
+      font-size: 12pt;
+      font-weight: bold;
+      color: $magentaColor;
+      &:hover {
+        background-color: rgb(72, 22, 48);
+        color: #fff;
+      }
+    }
+    a {
+      width: 150px;
+      height: 30px;
+      background: #fff;
+      font-size: 12pt;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
       padding: 5px;
+      border: 1px solid $magentaColor;
+      border-radius: 5px;
+      text-align: center;
+      &:hover {
+        background-color: rgb(233, 190, 214);
+      }
+    }
+  }
+
+  .paymentSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5em;
+    border-bottom: 1px solid $magentaColor;
+
+    .leftSection {
+      padding: 10px;
+      display: grid;
+      justify-content: start;
+    }
+    .rightSection {
+      padding-right: 60px;
+      p {
+        margin: 3px;
+      }
+      .fieldRow {
+        text-align: right;
+      }
+    }
+    span.longLabel {
+      width: 150px;
+      display: inline-block;
+    }
+    label {
+      width: 100px;
+      display: inline-block;
     }
   }
 }

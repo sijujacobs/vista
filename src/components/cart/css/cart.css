@@ -3,11 +3,6 @@
           box-sizing: border-box;
 }
 
-.sectionHeader {
-  text-align: center;
-  color: #5e125c;
-}
-
 .cart {
   border: 1px solid #555;
   border-radius: 5px;
@@ -15,19 +10,24 @@
   padding: 5px;
 }
 
-.show {
+.cart .sectionHeader {
+  text-align: center;
+  color: #5e125c;
+}
+
+.cart .show {
   visibility: visible;
 }
 
-.hide {
+.cart .hide {
   visibility: hidden;
 }
 
-.cartItem {
+.cart .cartItem {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 320px 70px 70px 70px 70px;
-      grid-template-columns: 320px 70px 70px 70px 70px;
+  -ms-grid-columns: 285px 75px 75px 65px 30px;
+      grid-template-columns: 285px 75px 75px 65px 30px;
   grid-gap: 0.5rem;
   padding: 5px 0 0 25px;
   border: 1px solid #e1e1e1;
@@ -35,19 +35,19 @@
   margin: 3px;
 }
 
-.cartItem .productSection {
+.cart .cartItem .productSection {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 20px 50px 50px;
       grid-template-columns: 1fr 20px 50px 50px;
 }
 
-.cartItem .action {
+.cart .cartItem .action {
   text-align: right;
   padding: 5px;
 }
 
-span.removeIcon {
+.cart span.removeIcon {
   content: "\2715";
   font-weight: bold;
   color: red;
@@ -56,37 +56,37 @@ span.removeIcon {
   border-radius: 50%;
 }
 
-span.removeIcon:hover {
+.cart span.removeIcon:hover {
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
 
-.numericStepper {
+.cart .numericStepper {
   padding: 3px;
   text-align: right;
   width: 6em;
-  height: 1.5em;
+  height: 1.8em;
   border-radius: 5px;
   border: 1px solid #555;
 }
 
-.totalPrice {
+.cart .totalPrice {
   text-align: right;
 }
 
-.cartHeader {
+.cart .cartHeader {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 320px 70px 70px 70px 70px;
-      grid-template-columns: 320px 70px 70px 70px 70px;
+  -ms-grid-columns: 285px 70px 70px 70px 60px;
+      grid-template-columns: 285px 70px 70px 70px 60px;
   grid-gap: 0.6em;
   padding: 5px 0 5px 25px;
 }
 
-.cartHeader,
-.cartBody,
-.cartFooter {
+.cart .cartHeader,
+.cart .cartBody,
+.cart .cartFooter {
   margin: 3px;
   border: 1px solid #555;
   border-radius: 5px;
@@ -94,7 +94,7 @@ span.removeIcon:hover {
   color: #fff;
 }
 
-.cartBody {
+.cart .cartBody {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
@@ -103,13 +103,13 @@ span.removeIcon:hover {
   padding: 15px;
 }
 
-.cartFooter {
+.cart .cartFooter {
   display: -ms-grid;
   display: grid;
   justify-items: end;
 }
 
-.cartFooter button {
+.cart .cartFooter button {
   width: 150px;
   height: 30px;
   font-size: 12pt;
@@ -117,12 +117,12 @@ span.removeIcon:hover {
   color: #5e125c;
 }
 
-.cartFooter button:hover {
+.cart .cartFooter button:hover {
   background-color: #481630;
   color: #fff;
 }
 
-.cartFooter a {
+.cart .cartFooter a {
   width: 150px;
   height: 30px;
   background: #fff;
@@ -136,30 +136,47 @@ span.removeIcon:hover {
   text-align: center;
 }
 
-.cartFooter a:hover {
-  background-color: #3a2631;
+.cart .cartFooter a:hover {
+  background-color: #e9bed6;
 }
 
-.paymentSection {
+.cart .paymentSection {
   display: -ms-grid;
   display: grid;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
-  padding: 15px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+  border-bottom: 1px solid #5e125c;
 }
 
-.amountSection {
+.cart .paymentSection .leftSection {
+  padding: 10px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(80px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-gap: 0.2em;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
-.amountSection .labelSection div,
-.amountSection .valueSection div {
-  height: 20px;
-  padding: 5px;
+.cart .paymentSection .rightSection {
+  padding-right: 60px;
+}
+
+.cart .paymentSection .rightSection p {
+  margin: 3px;
+}
+
+.cart .paymentSection .rightSection .fieldRow {
+  text-align: right;
+}
+
+.cart .paymentSection span.longLabel {
+  width: 150px;
+  display: inline-block;
+}
+
+.cart .paymentSection label {
+  width: 100px;
+  display: inline-block;
 }
 /*# sourceMappingURL=cart.css.map */

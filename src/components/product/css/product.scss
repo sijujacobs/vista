@@ -9,6 +9,7 @@ $magentaColor: rgb(94, 18, 92);
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 0.5em;
 }
+
 .sectionHeader {
   text-align: center;
   color: $magentaColor;
@@ -30,6 +31,10 @@ $magentaColor: rgb(94, 18, 92);
     padding-left: 10px;
     color: $magentaColor;
   }
+}
+.scrollArea {
+  height: 75vh;
+  overflow: scroll;
 }
 
 .productList {

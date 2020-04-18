@@ -8,6 +8,7 @@ const InvoiceDetails = (props) => {
 
   const addressChangeHandler = (e) => {};
   const actionButtonHandler = (e) => {};
+  const invoiceChangeHandler = (e) => {};
 
   return (
     <div className="invoiceDetails">
@@ -38,7 +39,11 @@ const InvoiceDetails = (props) => {
           </p>
           <p className="fieldRow">
             <label>Invoice #</label>
-            <input type="text" />
+            <input
+              type="text"
+              value="VB/DXB/001/04182020"
+              onChange={invoiceChangeHandler}
+            />
           </p>
         </div>
       </div>
