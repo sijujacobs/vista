@@ -51,11 +51,6 @@ $magentaColor: rgb(94, 18, 92);
     grid-gap: 0.5em;
     border-bottom: 1px solid $magentaColor;
     padding: 10px 50px 10px 50px;
-    .rightSection {
-      .fieldRow {
-        text-align: right;
-      }
-    }
   }
 
   .actionSection {
@@ -65,16 +60,6 @@ $magentaColor: rgb(94, 18, 92);
     .button {
       margin: 3px;
     }
-  }
-  .leftSection {
-    padding: 10px;
-    display: grid;
-    justify-content: start;
-  }
-  .rightSection {
-    padding: 10px;
-    display: grid;
-    justify-content: end;
   }
 
   .fieldRow {
@@ -97,11 +82,26 @@ $magentaColor: rgb(94, 18, 92);
   }
 }
 
+.leftSection {
+  padding: 10px;
+  display: grid;
+  justify-content: start;
+}
+.rightSection {
+  padding-left: 30px;
+}
+
 .printContainer {
   background: #cccccc;
   padding: 25px;
   height: 87vh;
   overflow: scroll;
+
+  .newLine {
+    font-size: 13px;
+    display: block;
+    margin: 3px;
+  }
   .printArea {
     width: 21cm;
     height: 29.7cm;
@@ -131,26 +131,32 @@ $magentaColor: rgb(94, 18, 92);
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 0.5em;
-          border: 1px solid rgb(75, 38, 38);
+          border-top: 1px solid rgb(75, 38, 38);
+          padding-left: 50px;
         }
         .itemsSection {
-          border: 1px solid rgb(75, 38, 38);
+          padding: 10px 50px 10px 50px;
+          border-top: 1px solid rgb(75, 38, 38);
         }
         .paymentSection {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 0.5em;
+          border-top: 1px solid rgb(75, 38, 38);
+          padding-left: 50px;
         }
         .signatureSection {
-          border: 1px solid rgb(75, 38, 38);
+          border-top: 1px solid rgb(75, 38, 38);
+          padding-left: 50px;
         }
       }
       .pageFooter {
         display: grid;
-        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
         border-top: 1px solid $magentaColor;
-        padding: 15px;
+        padding: 10px;
         margin: 20px;
+        font-size: 10pt;
       }
     }
   }

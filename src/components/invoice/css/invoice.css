@@ -57,10 +57,6 @@
   padding: 10px 50px 10px 50px;
 }
 
-.invoiceDetails .paymentSection .rightSection .fieldRow {
-  text-align: right;
-}
-
 .invoiceDetails .actionSection {
   display: -ms-grid;
   display: grid;
@@ -72,24 +68,6 @@
 
 .invoiceDetails .actionSection .button {
   margin: 3px;
-}
-
-.invoiceDetails .leftSection {
-  padding: 10px;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-}
-
-.invoiceDetails .rightSection {
-  padding: 10px;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
 }
 
 .invoiceDetails .fieldRow {
@@ -114,11 +92,30 @@
   border-radius: 3px;
 }
 
+.leftSection {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.rightSection {
+  padding-left: 30px;
+}
+
 .printContainer {
   background: #cccccc;
   padding: 25px;
   height: 87vh;
   overflow: scroll;
+}
+
+.printContainer .newLine {
+  font-size: 13px;
+  display: block;
+  margin: 3px;
 }
 
 .printContainer .printArea {
@@ -162,11 +159,13 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
-  border: 1px solid #4b2626;
+  border-top: 1px solid #4b2626;
+  padding-left: 50px;
 }
 
 .printContainer .printArea .page .pageBody .itemsSection {
-  border: 1px solid #4b2626;
+  padding: 10px 50px 10px 50px;
+  border-top: 1px solid #4b2626;
 }
 
 .printContainer .printArea .page .pageBody .paymentSection {
@@ -175,18 +174,23 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
+  border-top: 1px solid #4b2626;
+  padding-left: 50px;
 }
 
 .printContainer .printArea .page .pageBody .signatureSection {
-  border: 1px solid #4b2626;
+  border-top: 1px solid #4b2626;
+  padding-left: 50px;
 }
 
 .printContainer .printArea .page .pageFooter {
   display: -ms-grid;
   display: grid;
-  justify-items: center;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   border-top: 1px solid #5e125c;
-  padding: 15px;
+  padding: 10px;
   margin: 20px;
+  font-size: 10pt;
 }
 /*# sourceMappingURL=invoice.css.map */

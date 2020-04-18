@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <p>
-        vistabiomed <span>&#169; {new Date().getFullYear()}</span>
+        Vista Biomed <span>&#169; {new Date().getFullYear()}</span>
       </p>
     </div>
   );
