@@ -113,4 +113,80 @@
   border: 1px solid #666;
   border-radius: 3px;
 }
+
+.printContainer {
+  background: #cccccc;
+  padding: 25px;
+  height: 87vh;
+  overflow: scroll;
+}
+
+.printContainer .printArea {
+  width: 21cm;
+  height: 29.7cm;
+  padding: 15px;
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.printContainer .printArea .page {
+  height: 29cm;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.printContainer .printArea .page .pageHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  margin: 20px;
+}
+
+.printContainer .printArea .page .pageBody {
+  height: 25cm;
+  width: 20cm;
+}
+
+.printContainer .printArea .page .pageBody .invoiceInfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  border: 1px solid #4b2626;
+}
+
+.printContainer .printArea .page .pageBody .itemsSection {
+  border: 1px solid #4b2626;
+}
+
+.printContainer .printArea .page .pageBody .paymentSection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+}
+
+.printContainer .printArea .page .pageBody .signatureSection {
+  border: 1px solid #4b2626;
+}
+
+.printContainer .printArea .page .pageFooter {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  border-top: 1px solid #5e125c;
+  padding: 15px;
+  margin: 20px;
+}
 /*# sourceMappingURL=invoice.css.map */

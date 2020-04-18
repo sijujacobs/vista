@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+
+import { NavLink } from "react-router-dom";
 import "./css/invoice.css";
 import InvoiceItem from "./InvoiceItem";
 
@@ -101,7 +103,7 @@ const InvoiceDetails = (props) => {
           <button className="button" onClick={() => actionButtonHandler()}>
             Save & Print
           </button>
-
+          <NavLink to="/printinvoice">Preview</NavLink>
           <button className="button" onClick={() => actionButtonHandler()}>
             Cancel
           </button>

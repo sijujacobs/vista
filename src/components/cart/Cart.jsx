@@ -90,14 +90,14 @@ const Cart = (props) => {
         </div>
       </div>
       <div className="cartFooter">
-        <div className={invoiceInfo.grandTotal > 0 ? "show" : "hide"}>
+        <div>
           <NavLink to="/invoice">Create Invoice</NavLink>
         </div>
       </div>
     </div>
   );
 };
-
+// className={invoiceInfo.grandTotal > 0 ? "show" : "hide"}
 const mapStateToProps = (state) => {
   return {
     cartItems: state.cartReducer.cartItems,

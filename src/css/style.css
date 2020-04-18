@@ -99,6 +99,10 @@
   }
 }
 
+.bodyContent {
+  height: 86vh;
+}
+
 button {
   width: 90px;
   height: 25px;
@@ -115,24 +119,6 @@ button:hover {
 
 .hidden {
   visibility: hidden;
-}
-
-.printContainer {
-  background: #cccccc;
-}
-
-.printArea {
-  background: white;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 0.5cm;
-  -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-}
-
-.printArea[size="A4"] {
-  width: 21cm;
-  height: 29.7cm;
 }
 
 .footer {

@@ -96,3 +96,84 @@ $magentaColor: rgb(94, 18, 92);
     }
   }
 }
+
+.printContainer {
+  background: #cccccc;
+  padding: 25px;
+  height: 87vh;
+  overflow: scroll;
+  .printArea {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 15px;
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+
+    .page {
+      height: 29cm;
+      display: grid;
+      justify-content: center;
+      .pageHeader {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.5em;
+        margin: 20px;
+      }
+      .pageBody {
+        height: 25cm;
+        width: 20cm;
+        .invoiceInfo {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 0.5em;
+          border: 1px solid rgb(75, 38, 38);
+        }
+        .itemsSection {
+          border: 1px solid rgb(75, 38, 38);
+        }
+        .paymentSection {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 0.5em;
+        }
+        .signatureSection {
+          border: 1px solid rgb(75, 38, 38);
+        }
+      }
+      .pageFooter {
+        display: grid;
+        justify-items: center;
+        border-top: 1px solid $magentaColor;
+        padding: 15px;
+        margin: 20px;
+      }
+    }
+  }
+
+  // .printArea[size="A4"] {
+  //   width: 21cm;
+  //   height: 29.7cm;
+  // }
+}
+
+// @page {
+//   size: A4;
+//   margin: 0;
+// }
+// @media print {
+//   .page {
+//     margin: 0;
+//     border: initial;
+//     border-radius: initial;
+//     width: initial;
+//     min-height: initial;
+//     box-shadow: initial;
+//     background: initial;
+//     page-break-after: always;
+//   }
+// }
