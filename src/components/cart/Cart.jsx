@@ -46,52 +46,54 @@ const Cart = (props) => {
         <div className="totalPrice">Total Price</div>
       </div>
       <div className="cartBody">
-        {cartItems &&
-          cartItems.length > 0 &&
-          cartItems.map((p) => <CartItem key={p.product_id} cartItem={p} />)}
-      </div>
-      <div className="paymentSection">
-        <div className="leftBlock">
-          <p className="fieldRow">
-            <span className="longLabel">Payment Method</span>
-            <label>PayPal</label>
-          </p>
-        </div>
-        <div className="rightAlign">
-          <p className="fieldRow">
-            <label>Sub Total</label>
-            <label>{invoiceInfo.subTotal}</label>
-          </p>
-          <p className="fieldRow">
-            <label>VAT</label>
-            <label>
-              <input
-                className="numericStepper vat"
-                type="number"
-                onChange={inputChangeHandler}
-              />
-            </label>
-          </p>
-          <p className="fieldRow">
-            <label>Discount</label>
-            <label>
-              <input
-                className="numericStepper discount hidden"
-                type="number"
-                onChange={inputChangeHandler}
-              />
-            </label>
-          </p>
-          <p className="fieldRow">
-            <label>Grand Total</label>
-            <label>{invoiceInfo.grandTotal}</label>
-          </p>
-        </div>
-      </div>
+        <div className="scrollArea">
+          {cartItems &&
+            cartItems.length > 0 &&
+            cartItems.map((p) => <CartItem key={p.product_id} cartItem={p} />)}
+          <div className="paymentSection">
+            <div className="leftBlock">
+              <p className="fieldRow">
+                <span className="longLabel">Payment Method</span>
+                <label>PayPal</label>
+              </p>
+            </div>
+            <div className="rightAlign">
+              <p className="fieldRow">
+                <label>Sub Total</label>
+                <label>{invoiceInfo.subTotal}</label>
+              </p>
+              <p className="fieldRow">
+                <label>VAT</label>
+                <label>
+                  <input
+                    className="numericStepper vat"
+                    type="number"
+                    onChange={inputChangeHandler}
+                  />
+                </label>
+              </p>
+              <p className="fieldRow">
+                <label>Discount</label>
+                <label>
+                  <input
+                    className="numericStepper discount hidden"
+                    type="number"
+                    onChange={inputChangeHandler}
+                  />
+                </label>
+              </p>
+              <p className="fieldRow">
+                <label>Grand Total</label>
+                <label>{invoiceInfo.grandTotal}</label>
+              </p>
+            </div>
+          </div>
 
-      <div className="cartFooter">
-        <div>
-          <NavLink to="/invoice">Create Invoice</NavLink>
+          <div className="cartFooter">
+            <div>
+              <NavLink to="/invoice">Create Invoice</NavLink>
+            </div>
+          </div>
         </div>
       </div>
     </div>

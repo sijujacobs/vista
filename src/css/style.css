@@ -1,10 +1,33 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .bodyContent {
   height: 90vh;
+}
+
+.scrollArea {
+  max-height: 75vh;
+  overflow: scroll;
+}
+
+.gridCol {
+  padding-top: 10px;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.leftAlign {
+  text-align: left;
 }
 
 .nav {
@@ -97,10 +120,6 @@
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
-}
-
-.bodyContent {
-  height: 86vh;
 }
 
 button {

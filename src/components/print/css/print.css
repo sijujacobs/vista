@@ -1,17 +1,20 @@
 .printContainer {
   background: #cccccc;
-  padding: 25px;
   height: 87vh;
   overflow: scroll;
   display: -ms-grid;
   display: grid;
   justify-items: center;
+  border: none;
+}
+
+.printContainer .buttonGroup {
+  padding: 30px;
 }
 
 .printContainer .pageWrapper {
   width: 21cm;
   height: 29.7cm;
-  padding: 15px;
   background: white;
   margin-bottom: 0.5cm;
   -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
@@ -19,12 +22,8 @@
 }
 
 .printContainer .pageWrapper .page {
-  height: 29cm;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 21cm;
+  height: 29.7cm;
 }
 
 .printContainer .pageWrapper .page .pageHeader {
@@ -33,12 +32,15 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
-  margin: 40px;
+  margin: 20px;
+  padding: 20px;
+  height: 80px;
 }
 
 .printContainer .pageWrapper .page .pageBody {
-  height: 25cm;
-  width: 20cm;
+  border-top: 3px solid #5e125c;
+  border-bottom: 3px solid #5e125c;
+  height: 930px;
 }
 
 .printContainer .pageWrapper .page .pageBody .invoiceInfo {
@@ -47,13 +49,13 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
-  border-top: 1px solid #4b2626;
   justify-items: center;
+  padding: 45px 0 35px 45px;
+  border-bottom: 1px solid #eed6ed;
 }
 
 .printContainer .pageWrapper .page .pageBody .itemsSection {
-  padding: 10px 50px 10px 50px;
-  border-top: 1px solid #4b2626;
+  padding: 50px 50px 10px 50px;
 }
 
 .printContainer .pageWrapper .page .pageBody .itemsSection .invoiceItem,
@@ -65,8 +67,12 @@
       grid-template-columns: 30px 1fr 80px 80px 70px;
   grid-gap: 0.5rem;
   padding: 3px;
-  border-bottom: 1px solid #e1e1e1;
   margin: 3px;
+  border-bottom: 1px solid #eed6ed;
+}
+
+.printContainer .pageWrapper .page .pageBody .itemsSection .invoiceItem:last-child {
+  border: none;
 }
 
 .printContainer .pageWrapper .page .pageBody .paymentSection {
@@ -75,13 +81,12 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
-  border-top: 1px solid #4b2626;
-  padding: 10px 50px 10px 50px;
+  margin: 5px 50px 20px 50px;
+  border-top: 1px solid #eed6ed;
 }
 
 .printContainer .pageWrapper .page .pageBody .signatureSection {
-  border-top: 1px solid #4b2626;
-  padding-left: 50px;
+  padding: 55px 0 15px 50px;
 }
 
 .printContainer .pageWrapper .page .pageFooter {
@@ -89,7 +94,6 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  border-top: 1px solid #5e125c;
   padding: 10px;
   margin: 20px;
   font-size: 10pt;
@@ -98,6 +102,7 @@
 @page {
   size: auto;
   margin: 0mm;
+  border: none;
 }
 
 @media print {
@@ -107,7 +112,8 @@
     display: none;
   }
   .printContainer {
-    background: #cccccc;
+    border: none;
+    background: none;
     display: -ms-grid;
     display: grid;
     justify-items: center;
@@ -120,8 +126,23 @@
     margin: 0;
     padding: 0;
     background: white;
+    border: none;
+    box-shadow: none;
     -webkit-box-shadow: none;
-            box-shadow: none;
+  }
+  .printContainer .pageWrapper .page {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0;
+    padding: 0;
+  }
+  .printContainer .pageWrapper .page .pageHeader {
+    height: 80px;
+  }
+  .printContainer .pageWrapper .page .pageBody {
+    height: 930px;
+    margin: 0;
+    padding: 0;
   }
 }
 /*# sourceMappingURL=print.css.map */

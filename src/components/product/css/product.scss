@@ -32,10 +32,6 @@ $magentaColor: rgb(94, 18, 92);
     color: $magentaColor;
   }
 }
-.scrollArea {
-  height: 75vh;
-  overflow: scroll;
-}
 
 .productList {
   border: 1px solid #555;
@@ -49,8 +45,10 @@ $magentaColor: rgb(94, 18, 92);
   grid-template-columns: 10% minmax(200px, 75%) minmax(100px, 10%);
   grid-template-areas: "imageSection infoSection buttonSection";
   margin: 3px;
-  border: 1px solid #e1e1e1;
   border-radius: 5px;
+  &:nth-child(even) {
+    background: #eed6ed;
+  }
 }
 
 .imageSection {

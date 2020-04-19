@@ -10,18 +10,6 @@ $magentaColor: rgb(94, 18, 92);
   margin: 3px;
   padding: 5px;
 
-  .rightAlign {
-    text-align: right;
-  }
-
-  .centerAlign {
-    text-align: center;
-  }
-
-  .leftAlign {
-    text-align: left;
-  }
-
   .cartHeader {
     display: grid;
     grid-template-columns: 280px 70px 70px 70px 50px;
@@ -30,14 +18,12 @@ $magentaColor: rgb(94, 18, 92);
   }
 
   .cartBody {
-    padding: 15px;
-
+    margin-top: 10px;
     .cartItem {
       display: grid;
       grid-template-columns: 285px 75px 75px 55px 30px;
       grid-gap: 0.5rem;
-      border-bottom: 1px solid #e1e1e1;
-      padding-bottom: 10px;
+      padding: 1px 0 10px 20px;
       border-radius: 5px;
       margin: 3px;
 
@@ -45,9 +31,7 @@ $magentaColor: rgb(94, 18, 92);
         text-align: right;
         padding: 5px;
       }
-      .totalPrice {
-        text-align: right;
-      }
+
       span.removeIcon {
         content: "\2715";
         font-weight: bold;
@@ -59,6 +43,10 @@ $magentaColor: rgb(94, 18, 92);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
           cursor: pointer;
         }
+      }
+
+      &:nth-child(even) {
+        background: #eed6ed;
       }
     }
   }

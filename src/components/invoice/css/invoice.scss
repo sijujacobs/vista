@@ -12,6 +12,9 @@ $magentaColor: rgb(94, 18, 92);
 }
 
 .invoiceDetails {
+  height: 90vh;
+  overflow: scroll;
+
   .title {
     text-align: center;
     color: $magentaColor;
@@ -44,8 +47,11 @@ $magentaColor: rgb(94, 18, 92);
       grid-template-columns: 1fr 100px 100px 100px;
       grid-gap: 0.5rem;
       padding: 5px;
-      border-bottom: 1px solid #e1e1e1;
       margin: 3px;
+    }
+
+    .invoiceItem:nth-child(even) {
+      background: #eed6ed;
     }
 
     .itemName {
@@ -89,17 +95,6 @@ $magentaColor: rgb(94, 18, 92);
   }
 } // End-InvoiceDetails
 
-.rightAlign {
-  text-align: right;
-}
-
-.centerAlign {
-  text-align: center;
-}
-
-.leftAlign {
-  text-align: left;
-}
 .fieldRow {
   margin: 5px;
   label {

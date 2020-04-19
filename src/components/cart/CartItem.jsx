@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { editCartItem, removeCartItem } from "../../redux/actions/index";
 
 const CartItem = (props) => {
-  const { cartItem, editCartItem } = props;
+  const { cartItem, editCartItem, removeCartItem } = props;
 
   const updateItem = (inputData) => {
     let editedItem = {
@@ -31,7 +31,8 @@ const CartItem = (props) => {
   };
 
   const removeItemHandler = (selectedProduct) => {
-    props.removeCartItem(selectedProduct);
+    console.log("cartItem :: removeItemHandler : ", selectedProduct);
+    removeCartItem(selectedProduct);
   };
   return (
     <div className="cartItem">
@@ -44,21 +45,21 @@ const CartItem = (props) => {
           {props.cartItem.product_description}
         </span>
       </div>
-      <div className="quantityRow">
+      <div className="gridCol">
         <input
           className="numericStepper quantity"
           type="number"
           onChange={inputChangeHandler}
         />
       </div>
-      <div className="unitPriceRow">
+      <div className="gridCol">
         <input
           className="numericStepper unitPrice"
           type="number"
           onChange={inputChangeHandler}
         />
       </div>
-      <div className="totalPrice">
+      <div className="gridCol rightAlign">
         <div>{props.cartItem.total_price}</div>
       </div>
       <div className="action">

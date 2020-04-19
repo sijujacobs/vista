@@ -1,46 +1,54 @@
 $magentaColor: rgb(94, 18, 92);
+$lightMagentaColor: #eed6ed;
+$thickBorder: 3px solid $magentaColor;
+$lightBorder: 1px solid $lightMagentaColor;
+$a4Width: 21cm;
+$a4Height: 29.7cm;
 
 .printContainer {
   background: #cccccc;
-  padding: 25px;
   height: 87vh;
   overflow: scroll;
   display: grid;
   justify-items: center;
+  border: none;
+  .buttonGroup {
+    padding: 30px;
+  }
 
   .pageWrapper {
-    width: 21cm;
-    height: 29.7cm;
-    padding: 15px;
+    width: $a4Width;
+    height: $a4Height;
     background: white;
     margin-bottom: 0.5cm;
     -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-    // box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 
     .page {
-      height: 29cm;
-      display: grid;
-      justify-content: center;
+      width: $a4Width;
+      height: $a4Height;
       .pageHeader {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 0.5em;
-        margin: 40px;
+        margin: 20px;
+        padding: 20px;
+        height: 80px;
       }
       .pageBody {
-        height: 25cm;
-        width: 20cm;
+        border-top: $thickBorder;
+        border-bottom: $thickBorder;
+        height: 930px;
         .invoiceInfo {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 0.5em;
-          border-top: 1px solid rgb(75, 38, 38);
           justify-items: center;
+          padding: 45px 0 35px 45px;
+          border-bottom: $lightBorder;
         }
         .itemsSection {
-          padding: 10px 50px 10px 50px;
-          border-top: 1px solid rgb(75, 38, 38);
+          padding: 50px 50px 10px 50px;
           .invoiceItem,
           .invoiceItemHeader {
             color: 000;
@@ -48,26 +56,28 @@ $magentaColor: rgb(94, 18, 92);
             grid-template-columns: 30px 1fr 80px 80px 70px;
             grid-gap: 0.5rem;
             padding: 3px;
-            border-bottom: 1px solid #e1e1e1;
             margin: 3px;
+            border-bottom: $lightBorder;
+          }
+
+          .invoiceItem:last-child {
+            border: none;
           }
         }
         .paymentSection {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-gap: 0.5em;
-          border-top: 1px solid rgb(75, 38, 38);
-          padding: 10px 50px 10px 50px;
+          margin: 5px 50px 20px 50px;
+          border-top: $lightBorder;
         }
         .signatureSection {
-          border-top: 1px solid rgb(75, 38, 38);
-          padding-left: 50px;
+          padding: 55px 0 15px 50px;
         }
       }
       .pageFooter {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        border-top: 1px solid $magentaColor;
         padding: 10px;
         margin: 20px;
         font-size: 10pt;
@@ -76,14 +86,10 @@ $magentaColor: rgb(94, 18, 92);
   } //End-printArea
 } //End-printContainer
 
-// .printArea[size="A4"] {
-//   width: 21cm;
-//   height: 29.7cm;
-// }
-
 @page {
   size: auto;
   margin: 0mm;
+  border: none;
 }
 @media print {
   .buttonGroup,
@@ -92,7 +98,8 @@ $magentaColor: rgb(94, 18, 92);
     display: none;
   }
   .printContainer {
-    background: #cccccc;
+    border: none;
+    background: none;
     display: grid;
     justify-items: center;
     width: 21cm;
@@ -103,7 +110,23 @@ $magentaColor: rgb(94, 18, 92);
       margin: 0;
       padding: 0;
       background: white;
+      border: none;
       box-shadow: none;
+      -webkit-box-shadow: none;
+      .page {
+        width: $a4Width;
+        height: $a4Height;
+        margin: 0;
+        padding: 0;
+        .pageHeader {
+          height: 80px;
+        }
+        .pageBody {
+          height: 930px;
+          margin: 0;
+          padding: 0;
+        }
+      }
     }
   }
 }

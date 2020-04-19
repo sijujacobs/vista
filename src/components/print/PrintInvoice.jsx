@@ -48,7 +48,9 @@ const PrintInvoice = (props) => {
         <div className="page">
           <div className="pageHeader">
             <div className="leftSection"> LOGO </div>
-            <div className="centerSection centerAlign">VISTA BIOMED</div>
+            <div className="centerSection centerAlign">
+              VISTA BIOMED - 04:00
+            </div>
             <div className="rightSection rightAlign"> Invoice </div>
           </div>
           <div className="pageBody">
@@ -63,8 +65,8 @@ const PrintInvoice = (props) => {
                   <span className="longLabel">DL-543-872</span>
                 </p>
                 <p className="fieldRow">
-                  <label>TRN# : </label>
-                  <span className="longLabel">TRN-33-33TRD</span>
+                  <label>TR# : </label>
+                  <span className="longLabel">TR-33-33TRD</span>
                 </p>
               </div>
               <div className="centerSection">
@@ -94,9 +96,9 @@ const PrintInvoice = (props) => {
               <div className="invoiceItemHeader">
                 <div className="sNumber">#</div>
                 <div className="productTitle">Product</div>
-                <div className="quantity">Quantity</div>
-                <div className="unitPrice">Unit Price</div>
-                <div className="totalPrice">Total Price</div>
+                <div className="rightAlign">Quantity</div>
+                <div className="rightAlign">Unit Price</div>
+                <div className="rightAlign">Total Price</div>
               </div>
               {cartItems &&
                 cartItems.length > 0 &&
@@ -112,9 +114,11 @@ const PrintInvoice = (props) => {
                         {p.product_description}
                       </span>
                     </div>
-                    <span className="rightAlign">{p.quantity}</span>
-                    <span className="rightAlign">{p.product_price}</span>
-                    <span className="rightAlign">{p.total_price}</span>
+                    <span className="gridCol rightAlign">{p.quantity}</span>
+                    <span className="gridCol rightAlign">
+                      {p.product_price}
+                    </span>
+                    <span className="gridCol rightAlign">{p.total_price}</span>
                   </div>
                 ))}
             </div>

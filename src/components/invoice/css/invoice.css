@@ -10,6 +10,11 @@
   margin: 3px;
 }
 
+.invoiceDetails {
+  height: 90vh;
+  overflow: scroll;
+}
+
 .invoiceDetails .title {
   text-align: center;
   color: #5e125c;
@@ -46,8 +51,11 @@
       grid-template-columns: 1fr 100px 100px 100px;
   grid-gap: 0.5rem;
   padding: 5px;
-  border-bottom: 1px solid #e1e1e1;
   margin: 3px;
+}
+
+.invoiceDetails .itemSection .invoiceItem:nth-child(even) {
+  background: #eed6ed;
 }
 
 .invoiceDetails .itemSection .itemName {
@@ -94,18 +102,6 @@
 .invoiceDetails .actionSection .linkButton:hover {
   background-color: #5e125c;
   color: white;
-}
-
-.rightAlign {
-  text-align: right;
-}
-
-.centerAlign {
-  text-align: center;
-}
-
-.leftAlign {
-  text-align: left;
 }
 
 .fieldRow {

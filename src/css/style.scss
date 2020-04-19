@@ -2,9 +2,29 @@ $magentaColor: rgb(94, 18, 92);
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 .bodyContent {
   height: 90vh;
+}
+.scrollArea {
+  max-height: 75vh;
+  overflow: scroll;
+}
+.gridCol {
+  padding-top: 10px;
+}
+.rightAlign {
+  text-align: right;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.leftAlign {
+  text-align: left;
 }
 
 // ---------------NAVIGATION MENU
@@ -99,9 +119,6 @@ $magentaColor: rgb(94, 18, 92);
   }
 }
 // ----------------END NAVIGATION MENU
-.bodyContent {
-  height: 86vh;
-}
 
 button {
   width: 90px;
