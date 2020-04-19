@@ -3,53 +3,66 @@ $magentaColor: rgb(94, 18, 92);
 * {
   box-sizing: border-box;
 }
+
 .cart {
   border: 1px solid #555;
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
-  .sectionHeader {
+
+  .rightAlign {
+    text-align: right;
+  }
+
+  .centerAlign {
     text-align: center;
-    color: $magentaColor;
   }
 
-  .show {
-    visibility: visible;
-  }
-  .hide {
-    visibility: hidden;
+  .leftAlign {
+    text-align: left;
   }
 
-  .cartItem {
+  .cartHeader {
     display: grid;
-    grid-template-columns: 285px 75px 75px 65px 30px;
-    grid-gap: 0.5rem;
-    padding: 5px 0 0 25px;
-    border: 1px solid #e1e1e1;
-    border-radius: 5px;
-    margin: 3px;
+    grid-template-columns: 280px 70px 70px 70px 50px;
+    grid-gap: 0.6em;
+    padding: 5px 0 5px 25px;
+  }
 
-    .productSection {
+  .cartBody {
+    padding: 15px;
+
+    .cartItem {
       display: grid;
-      grid-template-columns: 1fr 20px 50px 50px;
-    }
-    .action {
-      text-align: right;
-      padding: 5px;
+      grid-template-columns: 285px 75px 75px 55px 30px;
+      grid-gap: 0.5rem;
+      border-bottom: 1px solid #e1e1e1;
+      padding-bottom: 10px;
+      border-radius: 5px;
+      margin: 3px;
+
+      .action {
+        text-align: right;
+        padding: 5px;
+      }
+      .totalPrice {
+        text-align: right;
+      }
+      span.removeIcon {
+        content: "\2715";
+        font-weight: bold;
+        color: red;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        &:hover {
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+          cursor: pointer;
+        }
+      }
     }
   }
-  span.removeIcon {
-    content: "\2715";
-    font-weight: bold;
-    color: red;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    &:hover {
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-      cursor: pointer;
-    }
-  }
+
   .numericStepper {
     padding: 3px;
     text-align: right;
@@ -58,17 +71,9 @@ $magentaColor: rgb(94, 18, 92);
     border-radius: 5px;
     border: 1px solid #555;
   }
-  .totalPrice {
-    text-align: right;
-  }
-  .cartHeader {
-    display: grid;
-    grid-template-columns: 285px 70px 70px 70px 60px;
-    grid-gap: 0.6em;
-    padding: 5px 0 5px 25px;
-  }
+
   .cartHeader,
-  .cartBody,
+  .paymentSection,
   .cartFooter {
     margin: 3px;
     border: 1px solid #555;
@@ -77,17 +82,10 @@ $magentaColor: rgb(94, 18, 92);
     color: #fff;
   }
 
-  .cartBody {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 0.5em;
-    padding: 15px;
-  }
-
   .cartFooter {
     display: grid;
     justify-items: end;
-
+    padding: 10px;
     button {
       width: 150px;
       height: 30px;
@@ -115,7 +113,7 @@ $magentaColor: rgb(94, 18, 92);
         background-color: rgb(233, 190, 214);
       }
     }
-  }
+  } //End-Footer
 
   .paymentSection {
     display: grid;
@@ -123,27 +121,27 @@ $magentaColor: rgb(94, 18, 92);
     grid-gap: 0.5em;
     border-bottom: 1px solid $magentaColor;
 
-    .leftSection {
+    .leftBlock {
       padding: 10px;
       display: grid;
       justify-content: start;
     }
-    .rightSection {
-      padding-right: 60px;
-      p {
-        margin: 3px;
+
+    .fieldRow {
+      margin: 3px;
+      width: 250px;
+      span.label {
+        width: 100px;
+        display: inline-block;
       }
-      .fieldRow {
-        text-align: right;
+      span.longLabel {
+        width: 150px;
+        display: inline-block;
+      }
+      label {
+        width: 100px;
+        display: inline-block;
       }
     }
-    span.longLabel {
-      width: 150px;
-      display: inline-block;
-    }
-    label {
-      width: 100px;
-      display: inline-block;
-    }
-  }
-}
+  } //End-PaymentSection
+} //End of Cart

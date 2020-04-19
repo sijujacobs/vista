@@ -10,44 +10,53 @@
   padding: 5px;
 }
 
-.cart .sectionHeader {
+.cart .rightAlign {
+  text-align: right;
+}
+
+.cart .centerAlign {
   text-align: center;
-  color: #5e125c;
 }
 
-.cart .show {
-  visibility: visible;
+.cart .leftAlign {
+  text-align: left;
 }
 
-.cart .hide {
-  visibility: hidden;
-}
-
-.cart .cartItem {
+.cart .cartHeader {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 285px 75px 75px 65px 30px;
-      grid-template-columns: 285px 75px 75px 65px 30px;
+  -ms-grid-columns: 280px 70px 70px 70px 50px;
+      grid-template-columns: 280px 70px 70px 70px 50px;
+  grid-gap: 0.6em;
+  padding: 5px 0 5px 25px;
+}
+
+.cart .cartBody {
+  padding: 15px;
+}
+
+.cart .cartBody .cartItem {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 285px 75px 75px 55px 30px;
+      grid-template-columns: 285px 75px 75px 55px 30px;
   grid-gap: 0.5rem;
-  padding: 5px 0 0 25px;
-  border: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
   border-radius: 5px;
   margin: 3px;
 }
 
-.cart .cartItem .productSection {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 50px 50px;
-      grid-template-columns: 1fr 20px 50px 50px;
-}
-
-.cart .cartItem .action {
+.cart .cartBody .cartItem .action {
   text-align: right;
   padding: 5px;
 }
 
-.cart span.removeIcon {
+.cart .cartBody .cartItem .totalPrice {
+  text-align: right;
+}
+
+.cart .cartBody .cartItem span.removeIcon {
   content: "\2715";
   font-weight: bold;
   color: red;
@@ -56,7 +65,7 @@
   border-radius: 50%;
 }
 
-.cart span.removeIcon:hover {
+.cart .cartBody .cartItem span.removeIcon:hover {
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
   cursor: pointer;
@@ -71,21 +80,8 @@
   border: 1px solid #555;
 }
 
-.cart .totalPrice {
-  text-align: right;
-}
-
-.cart .cartHeader {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 285px 70px 70px 70px 60px;
-      grid-template-columns: 285px 70px 70px 70px 60px;
-  grid-gap: 0.6em;
-  padding: 5px 0 5px 25px;
-}
-
 .cart .cartHeader,
-.cart .cartBody,
+.cart .paymentSection,
 .cart .cartFooter {
   margin: 3px;
   border: 1px solid #555;
@@ -94,19 +90,11 @@
   color: #fff;
 }
 
-.cart .cartBody {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 0.5em;
-  padding: 15px;
-}
-
 .cart .cartFooter {
   display: -ms-grid;
   display: grid;
   justify-items: end;
+  padding: 10px;
 }
 
 .cart .cartFooter button {
@@ -149,7 +137,7 @@
   border-bottom: 1px solid #5e125c;
 }
 
-.cart .paymentSection .leftSection {
+.cart .paymentSection .leftBlock {
   padding: 10px;
   display: -ms-grid;
   display: grid;
@@ -158,24 +146,22 @@
           justify-content: start;
 }
 
-.cart .paymentSection .rightSection {
-  padding-right: 60px;
-}
-
-.cart .paymentSection .rightSection p {
+.cart .paymentSection .fieldRow {
   margin: 3px;
+  width: 250px;
 }
 
-.cart .paymentSection .rightSection .fieldRow {
-  text-align: right;
+.cart .paymentSection .fieldRow span.label {
+  width: 100px;
+  display: inline-block;
 }
 
-.cart .paymentSection span.longLabel {
+.cart .paymentSection .fieldRow span.longLabel {
   width: 150px;
   display: inline-block;
 }
 
-.cart .paymentSection label {
+.cart .paymentSection .fieldRow label {
   width: 100px;
   display: inline-block;
 }

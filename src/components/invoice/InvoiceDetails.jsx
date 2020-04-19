@@ -14,9 +14,9 @@ const InvoiceDetails = (props) => {
 
   return (
     <div className="invoiceDetails">
-      <h2 className="title">Tax Invoice</h2>
+      <p className="title">Invoice</p>
       <div className="infoSection">
-        <div className="leftSection">
+        <div className="leftBlock">
           <p className="fieldRow">
             <label>LIC #</label>
             <label>111111</label>
@@ -30,7 +30,7 @@ const InvoiceDetails = (props) => {
             <label>333333</label>
           </p>
         </div>
-        <div className="rightSection">
+        <div className="block">
           <p className="fieldRow">
             <label>Date</label>
             <input type="date" />
@@ -48,19 +48,19 @@ const InvoiceDetails = (props) => {
             />
           </p>
         </div>
-      </div>
-      <div className="addressSection">
-        <div className="leftSection">
-          <label>Bill To,</label>
-          <textarea
-            className="txtAddress"
-            rows={5}
-            cols={50}
-            onChange={addressChangeHandler}
-          />
+        <div className="rightBlock">
+          <div className="addressSection">
+            <label className="newLine">Bill To,</label>
+            <textarea
+              className="txtAddress"
+              rows={4}
+              cols={50}
+              onChange={addressChangeHandler}
+            />
+          </div>
         </div>
-        <div className="rightSection"></div>
       </div>
+
       <div className="itemSection">
         <div className="invoiceItemHeader">
           <div className="productTitle">Product</div>
@@ -73,13 +73,13 @@ const InvoiceDetails = (props) => {
           cartItems.map((p) => <InvoiceItem key={p.product_id} cartItem={p} />)}
       </div>
       <div className="paymentSection">
-        <div className="leftSection">
+        <div className="leftBlock">
           <p className="fieldRow">
             <span className="longLabel">Payment Method</span>
             <label>PayPal</label>
           </p>
         </div>
-        <div className="rightSection">
+        <div className="rightBlock">
           <p className="fieldRow">
             <label>Sub Total</label>
             <label>{invoiceInfo.subTotal}</label>
@@ -100,10 +100,9 @@ const InvoiceDetails = (props) => {
       </div>
       <div className="actionSection">
         <div className="btn-group">
-          <button className="button" onClick={() => actionButtonHandler()}>
-            Save & Print
-          </button>
-          <NavLink to="/printinvoice">Preview</NavLink>
+          <NavLink className="linkButton" to="/printinvoice">
+            Save
+          </NavLink>
           <button className="button" onClick={() => actionButtonHandler()}>
             Cancel
           </button>

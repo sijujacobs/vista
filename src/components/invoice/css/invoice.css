@@ -4,6 +4,12 @@
   outline: none;
 }
 
+.newLine {
+  font-size: 13px;
+  display: block;
+  margin: 3px;
+}
+
 .invoiceDetails .title {
   text-align: center;
   color: #5e125c;
@@ -12,16 +18,18 @@
 .invoiceDetails .infoSection {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
+  justify-items: center;
   border-top: 1px solid #5e125c;
 }
 
-.invoiceDetails .addressSection .txtAddress {
+.invoiceDetails .infoSection .addressSection .txtAddress {
   border: 1px solid #5e125c;
   border-radius: 3px;
   padding: 5px;
+  display: block;
 }
 
 .invoiceDetails .itemSection {
@@ -42,9 +50,8 @@
   margin: 3px;
 }
 
-.invoiceDetails .itemSection .invoiceItem .rightAlign,
-.invoiceDetails .itemSection .invoiceItemHeader .rightAlign {
-  text-align: right;
+.invoiceDetails .itemSection .itemName {
+  color: #000;
 }
 
 .invoiceDetails .paymentSection {
@@ -57,6 +64,10 @@
   padding: 10px 50px 10px 50px;
 }
 
+.invoiceDetails .paymentSection .rightBlock {
+  text-align: right;
+}
+
 .invoiceDetails .actionSection {
   display: -ms-grid;
   display: grid;
@@ -66,43 +77,58 @@
   padding: 10px;
 }
 
-.invoiceDetails .actionSection .button {
-  margin: 3px;
-}
-
-.invoiceDetails .fieldRow {
-  margin: 3px;
-  width: 300px;
-}
-
-.invoiceDetails .fieldRow span.longLabel {
-  width: 150px;
+.invoiceDetails .actionSection .linkButton {
+  width: 90px;
   display: inline-block;
-}
-
-.invoiceDetails .fieldRow label {
-  width: 100px;
-  display: inline-block;
-}
-
-.invoiceDetails .fieldRow input {
-  width: 200px;
   height: 25px;
-  border: 1px solid #666;
+  border: 1px solid #5e125c;
+  border-radius: 5px;
+  outline: none;
+  color: #5e125c;
+  text-align: center;
+  margin: 4px;
+  padding: 1px;
+  text-decoration: none;
+}
+
+.invoiceDetails .actionSection .linkButton:hover {
+  background-color: #5e125c;
+  color: white;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.leftAlign {
+  text-align: left;
+}
+
+.fieldRow {
+  margin: 5px;
+}
+
+.fieldRow label {
+  width: 75px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.fieldRow .longLabel {
+  width: 120px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.fieldRow input {
+  border: 1px solid #5e125c;
   border-radius: 3px;
-}
-
-.leftSection {
-  padding: 10px;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-}
-
-.rightSection {
-  padding-left: 30px;
+  height: 22px;
+  width: 130px;
 }
 
 .printContainer {
@@ -110,12 +136,6 @@
   padding: 25px;
   height: 87vh;
   overflow: scroll;
-}
-
-.printContainer .newLine {
-  font-size: 13px;
-  display: block;
-  margin: 3px;
 }
 
 .printContainer .printArea {
@@ -145,7 +165,7 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
-  margin: 20px;
+  margin: 40px;
 }
 
 .printContainer .printArea .page .pageBody {
@@ -160,12 +180,25 @@
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
   border-top: 1px solid #4b2626;
-  padding-left: 50px;
+  justify-items: center;
 }
 
 .printContainer .printArea .page .pageBody .itemsSection {
   padding: 10px 50px 10px 50px;
   border-top: 1px solid #4b2626;
+}
+
+.printContainer .printArea .page .pageBody .itemsSection .invoiceItem,
+.printContainer .printArea .page .pageBody .itemsSection .invoiceItemHeader {
+  color: 000;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px 1fr 80px 80px 70px;
+      grid-template-columns: 30px 1fr 80px 80px 70px;
+  grid-gap: 0.5rem;
+  padding: 3px;
+  border-bottom: 1px solid #e1e1e1;
+  margin: 3px;
 }
 
 .printContainer .printArea .page .pageBody .paymentSection {
@@ -175,7 +208,7 @@
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.5em;
   border-top: 1px solid #4b2626;
-  padding-left: 50px;
+  padding: 10px 50px 10px 50px;
 }
 
 .printContainer .printArea .page .pageBody .signatureSection {

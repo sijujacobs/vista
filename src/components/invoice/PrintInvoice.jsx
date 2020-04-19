@@ -47,23 +47,23 @@ const PrintInvoice = (props) => {
           <div className="page">
             <div className="pageHeader">
               <div className="leftSection"> LOGO </div>
-              <div className="centerSection">VISTA BIOMED</div>
-              <div className="rightSection"> Invoice </div>
+              <div className="centerSection centerAlign">VISTA BIOMED</div>
+              <div className="rightSection rightAlign"> Invoice </div>
             </div>
             <div className="pageBody">
               <div className="invoiceInfo">
                 <div className="leftSection">
                   <p className="fieldRow">
                     <label>LIC# : </label>
-                    <label>11AB-112-1DE1</label>
+                    <span className="longLabel">11AB-112-1DE1</span>
                   </p>
                   <p className="fieldRow">
                     <label>DL# : </label>
-                    <label>DL-543-872</label>
+                    <span className="longLabel">DL-543-872</span>
                   </p>
                   <p className="fieldRow">
                     <label>TRN# : </label>
-                    <label>TRN-33-33TRD</label>
+                    <span className="longLabel">TRN-33-33TRD</span>
                   </p>
                 </div>
                 <div className="centerSection">
@@ -83,27 +83,44 @@ const PrintInvoice = (props) => {
                 <div className="rightSection">
                   <p className="fieldRow">
                     <label>Bill To,</label>
-                    <span className="newLine">Customer Address</span>
+                    <span className="newLine">Address</span>
                     <span className="newLine">Street 1</span>
-                    <span className="newLine">City 1, State PIN 690514</span>
-                    <span className="newLine">PIN 690514</span>
+                    <span className="newLine">City, State PIN 690514</span>
                   </p>
                 </div>
               </div>
               <div className="itemsSection">
+                <div className="invoiceItemHeader">
+                  <div className="sNumber">#</div>
+                  <div className="productTitle">Product</div>
+                  <div className="quantity">Quantity</div>
+                  <div className="unitPrice">Unit Price</div>
+                  <div className="totalPrice">Total Price</div>
+                </div>
                 {cartItems &&
                   cartItems.length > 0 &&
-                  cartItems.map((p) => (
-                    <div key={p.product_id}>
-                      <span className="newLine">{p.product_name}</span>
-                      <span className="newLine">{p.product_description}</span>
+                  cartItems.map((p, index) => (
+                    <div className="invoiceItem" key={p.product_id}>
+                      <div className="itemNumber">{index + 1}</div>
+                      <div className="itemTitle">
+                        <div className="itemName">
+                          {p.product_name}
+                          <span className="productCode"> {p.product_code}</span>
+                        </div>
+                        <span className="productDesc">
+                          {p.product_description}
+                        </span>
+                      </div>
+                      <span className="rightAlign">{p.quantity}</span>
+                      <span className="rightAlign">{p.product_price}</span>
+                      <span className="rightAlign">{p.total_price}</span>
                     </div>
                   ))}
               </div>
               <div className="paymentSection">
                 <div className="leftSection">
                   <p className="fieldRow">
-                    <label>Payment Method</label>
+                    <span className="longLabel">Payment Method</span>
                     <label></label>
                   </p>
                 </div>
@@ -113,7 +130,7 @@ const PrintInvoice = (props) => {
                     <label></label>
                   </p>
                 </div>
-                <div className="rightSection">
+                <div className="rightSection rightAlign">
                   <p className="fieldRow">
                     <label>Sub Total : </label>
                     <label>{invoiceInfo.subTotal}</label>
@@ -134,7 +151,7 @@ const PrintInvoice = (props) => {
               </div>
               <div className="signatureSection">
                 <p className="fieldRow">
-                  <span className="newLine">Digital Signature,</span>
+                  <span className="newLine">Signature,</span>
                   <span className="newLine">Thank you.</span>
                 </p>
               </div>
@@ -143,10 +160,10 @@ const PrintInvoice = (props) => {
               <div className="leftSection">
                 <span>Phone : 99899899899 </span>
               </div>
-              <div className="centerSection">
+              <div className="centerSection centerAlign">
                 <span>Email : sales@vistabiomed.com </span>
               </div>
-              <div className="rightSection">
+              <div className="rightSection rightAlign">
                 <span>www.vistabiomed.com</span>
               </div>
             </div>

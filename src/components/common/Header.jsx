@@ -22,7 +22,6 @@ const Header = (props) => {
           Home
         </NavLink>
         <NavLink to="/products">Products</NavLink>
-        <NavLink to="/printinvoice">Print</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </div>
     </div>
