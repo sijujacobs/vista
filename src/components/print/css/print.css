@@ -1,0 +1,127 @@
+.printContainer {
+  background: #cccccc;
+  padding: 25px;
+  height: 87vh;
+  overflow: scroll;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.printContainer .pageWrapper {
+  width: 21cm;
+  height: 29.7cm;
+  padding: 15px;
+  background: white;
+  margin-bottom: 0.5cm;
+  -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.printContainer .pageWrapper .page {
+  height: 29cm;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.printContainer .pageWrapper .page .pageHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  margin: 40px;
+}
+
+.printContainer .pageWrapper .page .pageBody {
+  height: 25cm;
+  width: 20cm;
+}
+
+.printContainer .pageWrapper .page .pageBody .invoiceInfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  border-top: 1px solid #4b2626;
+  justify-items: center;
+}
+
+.printContainer .pageWrapper .page .pageBody .itemsSection {
+  padding: 10px 50px 10px 50px;
+  border-top: 1px solid #4b2626;
+}
+
+.printContainer .pageWrapper .page .pageBody .itemsSection .invoiceItem,
+.printContainer .pageWrapper .page .pageBody .itemsSection .invoiceItemHeader {
+  color: 000;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px 1fr 80px 80px 70px;
+      grid-template-columns: 30px 1fr 80px 80px 70px;
+  grid-gap: 0.5rem;
+  padding: 3px;
+  border-bottom: 1px solid #e1e1e1;
+  margin: 3px;
+}
+
+.printContainer .pageWrapper .page .pageBody .paymentSection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  border-top: 1px solid #4b2626;
+  padding: 10px 50px 10px 50px;
+}
+
+.printContainer .pageWrapper .page .pageBody .signatureSection {
+  border-top: 1px solid #4b2626;
+  padding-left: 50px;
+}
+
+.printContainer .pageWrapper .page .pageFooter {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid #5e125c;
+  padding: 10px;
+  margin: 20px;
+  font-size: 10pt;
+}
+
+@page {
+  size: auto;
+  margin: 0mm;
+}
+
+@media print {
+  .buttonGroup,
+  .nav,
+  .footer {
+    display: none;
+  }
+  .printContainer {
+    background: #cccccc;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0;
+    padding: 0;
+  }
+  .printContainer .pageWrapper {
+    margin: 0;
+    padding: 0;
+    background: white;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+/*# sourceMappingURL=print.css.map */

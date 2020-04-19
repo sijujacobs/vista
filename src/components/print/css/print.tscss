@@ -1,0 +1,97 @@
+.printContainer {
+  background: #cccccc;
+  padding: 25px;
+  height: 87vh;
+  overflow: scroll;
+
+  .printArea {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 15px;
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+
+    .page {
+      height: 29cm;
+      display: grid;
+      justify-content: center;
+      .pageHeader {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.5em;
+        margin: 40px;
+      }
+      .pageBody {
+        height: 25cm;
+        width: 20cm;
+        .invoiceInfo {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 0.5em;
+          border-top: 1px solid rgb(75, 38, 38);
+          justify-items: center;
+        }
+        .itemsSection {
+          padding: 10px 50px 10px 50px;
+          border-top: 1px solid rgb(75, 38, 38);
+          .invoiceItem,
+          .invoiceItemHeader {
+            color: 000;
+            display: grid;
+            grid-template-columns: 30px 1fr 80px 80px 70px;
+            grid-gap: 0.5rem;
+            padding: 3px;
+            border-bottom: 1px solid #e1e1e1;
+            margin: 3px;
+          }
+        }
+        .paymentSection {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-gap: 0.5em;
+          border-top: 1px solid rgb(75, 38, 38);
+          padding: 10px 50px 10px 50px;
+        }
+        .signatureSection {
+          border-top: 1px solid rgb(75, 38, 38);
+          padding-left: 50px;
+        }
+      }
+      .pageFooter {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-top: 1px solid $magentaColor;
+        padding: 10px;
+        margin: 20px;
+        font-size: 10pt;
+      }
+    }
+  }
+
+  // .printArea[size="A4"] {
+  //   width: 21cm;
+  //   height: 29.7cm;
+  // }
+}
+
+// @page {
+//   size: A4;
+//   margin: 0;
+// }
+// @media print {
+//   .page {
+//     margin: 0;
+//     border: initial;
+//     border-radius: initial;
+//     width: initial;
+//     min-height: initial;
+//     box-shadow: initial;
+//     background: initial;
+//     page-break-after: always;
+//   }
+// }
