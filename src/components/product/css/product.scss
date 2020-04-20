@@ -1,5 +1,10 @@
 $magentaColor: rgb(94, 18, 92);
-
+$highLightedBG: #030303;
+$boxShadow: 2px 2px 10px rgba(1, 1, 1, 0.6);
+$bottomBoxShadow: 2px 5px 12px 0px rgba(0, 0, 0, 0.75);
+$bottomWhiteBoxShadow: 1px 1px 10px 0px rgba(120, 116, 116, 0.75);
+$topBoxShadow: 2px -5px 12px 0px rgba(0, 0, 0, 0.75);
+$transition: all 0.5s ease;
 * {
   box-sizing: border-box;
 }
@@ -16,7 +21,7 @@ $magentaColor: rgb(94, 18, 92);
 }
 .searchSection {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 85% 15%;
   padding: 10px;
   margin: 3px;
   border: 1px solid #555;
@@ -34,11 +39,24 @@ $magentaColor: rgb(94, 18, 92);
 }
 
 .productList {
-  border: 1px solid #555;
+  border: 1px solid $magentaColor;
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
 }
+
+// .productDetails {
+//   border-radius: $borderRadius;
+//   display: grid;
+//   grid-template-areas: "productImage productDesc buttonSection";
+//   transform: scale(0.98);
+//   transition: $transition;
+//   background-color: $fadeBlackColor;
+//   &:hover {
+//     background-color: $highLightedBG;
+//     transform: scale(1);
+//   }
+// }
 
 .productDetails {
   display: grid;
@@ -46,8 +64,22 @@ $magentaColor: rgb(94, 18, 92);
   grid-template-areas: "imageSection infoSection buttonSection";
   margin: 3px;
   border-radius: 5px;
+  transform: scale(0.98);
+  transition: $transition;
   &:nth-child(even) {
     background: #eed6ed;
+  }
+  &:hover {
+    background-color: $magentaColor;
+    transform: scale(1);
+    color: #fff;
+  }
+  &:hover .productName {
+    color: #fff;
+  }
+  &:hover .button {
+    color: $magentaColor;
+    background-color: #fff;
   }
 }
 

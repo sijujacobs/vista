@@ -19,8 +19,8 @@
 .searchSection {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 80% 20%;
-      grid-template-columns: 80% 20%;
+  -ms-grid-columns: 85% 15%;
+      grid-template-columns: 85% 15%;
   padding: 10px;
   margin: 3px;
   border: 1px solid #555;
@@ -39,7 +39,7 @@
 }
 
 .productList {
-  border: 1px solid #555;
+  border: 1px solid #5e125c;
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
@@ -53,10 +53,30 @@
       grid-template-areas: "imageSection infoSection buttonSection";
   margin: 3px;
   border-radius: 5px;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .productDetails:nth-child(even) {
   background: #eed6ed;
+}
+
+.productDetails:hover {
+  background-color: #5e125c;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  color: #fff;
+}
+
+.productDetails:hover .productName {
+  color: #fff;
+}
+
+.productDetails:hover .button {
+  color: #5e125c;
+  background-color: #fff;
 }
 
 .imageSection {

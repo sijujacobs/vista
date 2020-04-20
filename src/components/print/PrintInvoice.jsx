@@ -49,7 +49,7 @@ const PrintInvoice = (props) => {
           <div className="pageHeader">
             <div className="leftSection"> LOGO </div>
             <div className="centerSection centerAlign">
-              VISTA BIOMED - 04:00
+              VISTA BIOMED - 10:00
             </div>
             <div className="rightSection rightAlign"> Invoice </div>
           </div>
@@ -57,38 +57,39 @@ const PrintInvoice = (props) => {
             <div className="invoiceInfo">
               <div className="leftSection">
                 <p className="fieldRow">
-                  <label>LIC# : </label>
+                  <label>Lic# </label>
                   <span className="longLabel">11AB-112-1DE1</span>
                 </p>
                 <p className="fieldRow">
-                  <label>DL# : </label>
+                  <label>Dl# </label>
                   <span className="longLabel">DL-543-872</span>
                 </p>
                 <p className="fieldRow">
-                  <label>TR# : </label>
-                  <span className="longLabel">TR-33-33TRD</span>
+                  <label>Lpo# </label>
+                  <label>333333</label>
                 </p>
               </div>
               <div className="centerSection">
                 <p className="fieldRow">
-                  <label>Date : </label>
+                  <label>Date </label>
                   <label>04-18-2020</label>
                 </p>
+
                 <p className="fieldRow">
-                  <label>LPO# : </label>
-                  <label>333333</label>
+                  <label>Invoice# </label>
+                  <label>VB/DXB/001/04182020</label>
                 </p>
                 <p className="fieldRow">
-                  <label>Invoice# : </label>
-                  <label>VB/DXB/001/04182020</label>
+                  <label>Tr# </label>
+                  <span className="longLabel">TR-33-33TRD</span>
                 </p>
               </div>
               <div className="rightSection">
-                <p className="fieldRow">
-                  <label>Bill To,</label>
-                  <span className="newLine">Address</span>
-                  <span className="newLine">Street 1</span>
-                  <span className="newLine">City, State PIN 690514</span>
+                <p className="fieldRow addressField">
+                  <label>Bill To</label>
+                  <span className="multilineSpan">
+                    Addressline 1, Addressline 2 , City, State, 690514
+                  </span>
                 </p>
               </div>
             </div>

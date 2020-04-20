@@ -11,13 +11,18 @@
 }
 
 .invoiceDetails {
+  width: 80%;
   height: 90vh;
+  margin: 0 auto;
   overflow: scroll;
+  -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
 .invoiceDetails .title {
   text-align: center;
   color: #5e125c;
+  padding: 15px 0 15px 0;
 }
 
 .invoiceDetails .infoSection {
@@ -28,13 +33,26 @@
   grid-gap: 0.5em;
   justify-items: center;
   border-top: 1px solid #5e125c;
+  padding: 15px 0 15px 0;
 }
 
-.invoiceDetails .infoSection .addressSection .txtAddress {
+.invoiceDetails .infoSection .addressField {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70px 1fr;
+      grid-template-columns: 70px 1fr;
+  grid-gap: 5px;
+  font-size: 11pt;
+}
+
+.invoiceDetails .infoSection .addressField .addressTxtArea {
   border: 1px solid #5e125c;
-  border-radius: 3px;
-  padding: 5px;
-  display: block;
+  border-radius: 5px;
+}
+
+.invoiceDetails .infoSection .multilineSpan {
+  height: 50px;
+  width: 100px;
 }
 
 .invoiceDetails .itemSection {

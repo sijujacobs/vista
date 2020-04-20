@@ -54,6 +54,20 @@
   border-bottom: 1px solid #eed6ed;
 }
 
+.printContainer .pageWrapper .page .pageBody .invoiceInfo .addressField {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70px 1fr;
+      grid-template-columns: 70px 1fr;
+  grid-gap: 5px;
+  font-size: 11pt;
+}
+
+.printContainer .pageWrapper .page .pageBody .invoiceInfo .multilineSpan {
+  height: 50px;
+  width: 100px;
+}
+
 .printContainer .pageWrapper .page .pageBody .itemsSection {
   padding: 50px 50px 10px 50px;
 }
@@ -113,7 +127,7 @@
   }
   .printContainer {
     border: none;
-    background: none;
+    background: #fff;
     display: -ms-grid;
     display: grid;
     justify-items: center;
@@ -133,6 +147,7 @@
   .printContainer .pageWrapper .page {
     width: 21cm;
     height: 29.7cm;
+    border: none;
     margin: 0;
     padding: 0;
   }

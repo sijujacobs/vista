@@ -18,15 +18,15 @@ const InvoiceDetails = (props) => {
       <div className="infoSection">
         <div className="leftBlock">
           <p className="fieldRow">
-            <label>LIC #</label>
+            <label>Lic #</label>
             <label>111111</label>
           </p>
           <p className="fieldRow">
-            <label>DL #</label>
+            <label>Dl #</label>
             <label>22222</label>
           </p>
           <p className="fieldRow">
-            <label>TRN #</label>
+            <label>Lpo #</label>
             <label>333333</label>
           </p>
         </div>
@@ -34,10 +34,6 @@ const InvoiceDetails = (props) => {
           <p className="fieldRow">
             <label>Date</label>
             <input type="date" />
-          </p>
-          <p className="fieldRow">
-            <label>LPO #</label>
-            <input type="text" />
           </p>
           <p className="fieldRow">
             <label>Invoice #</label>
@@ -49,15 +45,19 @@ const InvoiceDetails = (props) => {
           </p>
         </div>
         <div className="rightBlock">
-          <div className="addressSection">
-            <label className="newLine">Bill To,</label>
+          <p className="fieldRow">
+            <label>Tr #</label>
+            <input type="text" />
+          </p>
+          <p className="fieldRow addressField">
+            <label>Bill To</label>
             <textarea
-              className="txtAddress"
+              className="addressTxtArea"
               rows={4}
-              cols={50}
+              cols={22}
               onChange={addressChangeHandler}
-            />
-          </div>
+            ></textarea>
+          </p>
         </div>
       </div>
 

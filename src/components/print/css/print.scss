@@ -46,6 +46,17 @@ $a4Height: 29.7cm;
           justify-items: center;
           padding: 45px 0 35px 45px;
           border-bottom: $lightBorder;
+
+          .addressField {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            grid-gap: 5px;
+            font-size: 11pt;
+          }
+          .multilineSpan {
+            height: 50px;
+            width: 100px;
+          }
         }
         .itemsSection {
           padding: 50px 50px 10px 50px;
@@ -99,7 +110,7 @@ $a4Height: 29.7cm;
   }
   .printContainer {
     border: none;
-    background: none;
+    background: #fff;
     display: grid;
     justify-items: center;
     width: 21cm;
@@ -116,6 +127,7 @@ $a4Height: 29.7cm;
       .page {
         width: $a4Width;
         height: $a4Height;
+        border: none;
         margin: 0;
         padding: 0;
         .pageHeader {

@@ -30,20 +30,17 @@ const CartItem = (props) => {
     updateItem(inputData);
   };
 
-  const removeItemHandler = (selectedProduct) => {
-    console.log("cartItem :: removeItemHandler : ", selectedProduct);
-    removeCartItem(selectedProduct);
+  const removeItemHandler = () => {
+    removeCartItem(cartItem);
   };
   return (
     <div className="cartItem">
       <div className="productTitle">
         <div className="productName">
-          {props.cartItem.product_name}
-          <span className="productCode"> {props.cartItem.product_code}</span>
+          {cartItem.product_name}
+          <span className="productCode"> {cartItem.product_code}</span>
         </div>
-        <span className="productDesc">
-          {props.cartItem.product_description}
-        </span>
+        <span className="productDesc">{cartItem.product_description}</span>
       </div>
       <div className="gridCol">
         <input
@@ -60,7 +57,7 @@ const CartItem = (props) => {
         />
       </div>
       <div className="gridCol rightAlign">
-        <div>{props.cartItem.total_price}</div>
+        <div>{cartItem.total_price}</div>
       </div>
       <div className="action">
         <span className="removeIcon" onClick={removeItemHandler}>

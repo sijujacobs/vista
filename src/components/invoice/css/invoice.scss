@@ -12,12 +12,17 @@ $magentaColor: rgb(94, 18, 92);
 }
 
 .invoiceDetails {
+  width: 80%;
   height: 90vh;
+  margin: 0 auto;
   overflow: scroll;
+  -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 
   .title {
     text-align: center;
     color: $magentaColor;
+    padding: 15px 0 15px 0;
   }
   .infoSection {
     display: grid;
@@ -25,14 +30,21 @@ $magentaColor: rgb(94, 18, 92);
     grid-gap: 0.5em;
     justify-items: center;
     border-top: 1px solid $magentaColor;
+    padding: 15px 0 15px 0;
 
-    .addressSection {
-      .txtAddress {
+    .addressField {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      grid-gap: 5px;
+      font-size: 11pt;
+      .addressTxtArea {
         border: 1px solid $magentaColor;
-        border-radius: 3px;
-        padding: 5px;
-        display: block;
+        border-radius: 5px;
       }
+    }
+    .multilineSpan {
+      height: 50px;
+      width: 100px;
     }
   }
 
