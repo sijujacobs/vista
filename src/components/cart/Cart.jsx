@@ -38,7 +38,7 @@ const Cart = (props) => {
 
   return (
     <div id="cart" className="cart">
-      <div className="sectionHeader">Cart Items</div>
+      <div className="sectionHeader">Cart Items : {cartItems.length}</div>
       <div className="cartHeader">
         <div className="productTitle">Product</div>
         <div className="quantity">Quantity</div>

@@ -100,7 +100,7 @@ const InvoiceDetails = (props) => {
       </div>
       <div className="actionSection">
         <div className="btn-group">
-          <NavLink className="linkButton" to="/printinvoice">
+          <NavLink className="linkButton" to="/print">
             Save
           </NavLink>
           <button className="button" onClick={() => actionButtonHandler()}>

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 const Header = (props) => {
   return (
-    <div className="nav">
+    <div className="header nav">
       <input type="checkbox" id="nav-check" />
       <div className="nav-header">
         <div className="nav-title">VISTA BIOMED</div>
@@ -22,6 +22,7 @@ const Header = (props) => {
           Home
         </NavLink>
         <NavLink to="/products">Products</NavLink>
+        <NavLink to="/print">Print</NavLink>
         <NavLink to="/contact">Contact</NavLink>
       </div>
     </div>

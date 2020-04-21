@@ -1,144 +1,139 @@
 $magentaColor: rgb(94, 18, 92);
 $lightMagentaColor: #eed6ed;
 $thickBorder: 3px solid $magentaColor;
-$lightBorder: 1px solid $lightMagentaColor;
+$thinBorder: 1px solid $lightMagentaColor;
 $a4Width: 21cm;
 $a4Height: 29.7cm;
+$boxShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 
-.printContainer {
-  background: #cccccc;
-  height: 87vh;
-  overflow: scroll;
-  display: grid;
-  justify-items: center;
-  border: none;
-  .buttonGroup {
-    padding: 30px;
+.pageA4 {
+  * {
+    box-sizing: border-box;
   }
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: $boxShadow;
+  width: 21cm; //793.69px
+  //   height: 29.7cm; //1122.52px
 
-  .pageWrapper {
-    width: $a4Width;
-    height: $a4Height;
-    background: white;
-    margin-bottom: 0.5cm;
-    -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
-
-    .page {
-      width: $a4Width;
-      height: $a4Height;
-      .pageHeader {
+  header {
+    height: 180px;
+    border-bottom: $thickBorder;
+  }
+  .pageBody {
+    height: 838px;
+    .infoSection {
+      display: grid;
+      grid-template-columns: 30% 30% 35%;
+      grid-template-rows: 130px;
+      grid-gap: 0.5em;
+      justify-items: center;
+      padding: 30px 0 30px 0;
+      .dataBlock {
+        border: $thinBorder;
+        padding: 15px;
+      }
+    }
+    .itemsSection {
+      display: grid;
+      justify-items: center;
+      .itemHeaderBlock {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 400px 80px 80px 50px;
         grid-gap: 0.5em;
-        margin: 20px;
-        padding: 20px;
-        height: 80px;
+        padding: 5px 0 10px 0;
+        font-weight: bold;
       }
-      .pageBody {
-        border-top: $thickBorder;
-        border-bottom: $thickBorder;
-        height: 930px;
-        .invoiceInfo {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-gap: 0.5em;
-          justify-items: center;
-          padding: 45px 0 35px 45px;
-          border-bottom: $lightBorder;
-
-          .addressField {
-            display: grid;
-            grid-template-columns: 70px 1fr;
-            grid-gap: 5px;
-            font-size: 11pt;
-          }
-          .multilineSpan {
-            height: 50px;
-            width: 100px;
-          }
-        }
-        .itemsSection {
-          padding: 50px 50px 10px 50px;
-          .invoiceItem,
-          .invoiceItemHeader {
-            color: 000;
-            display: grid;
-            grid-template-columns: 30px 1fr 80px 80px 70px;
-            grid-gap: 0.5rem;
-            padding: 3px;
-            margin: 3px;
-            border-bottom: $lightBorder;
-          }
-
-          .invoiceItem:last-child {
-            border: none;
-          }
-        }
-        .paymentSection {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-gap: 0.5em;
-          margin: 5px 50px 20px 50px;
-          border-top: $lightBorder;
-        }
-        .signatureSection {
-          padding: 55px 0 15px 50px;
-        }
-      }
-      .pageFooter {
+      .itemBlock {
+        height: 40px;
+        border-top: $thinBorder;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 10px;
-        margin: 20px;
-        font-size: 10pt;
-      }
-    } //End -Page
-  } //End-printArea
-} //End-printContainer
-
-@page {
-  size: auto;
-  margin: 0mm;
-  border: none;
-}
-@media print {
-  .buttonGroup,
-  .nav,
-  .footer {
-    display: none;
-  }
-  .printContainer {
-    border: none;
-    background: #fff;
-    display: grid;
-    justify-items: center;
-    width: 21cm;
-    height: 29.7cm;
-    margin: 0;
-    padding: 0;
-    .pageWrapper {
-      margin: 0;
-      padding: 0;
-      background: white;
-      border: none;
-      box-shadow: none;
-      -webkit-box-shadow: none;
-      .page {
-        width: $a4Width;
-        height: $a4Height;
-        border: none;
-        margin: 0;
-        padding: 0;
-        .pageHeader {
-          height: 80px;
+        grid-template-columns: 375px 70px 70px 80px;
+        grid-gap: 0.5em;
+        margin: 3px 0 0 0;
+        div {
+          padding-top: 5px;
         }
-        .pageBody {
-          height: 930px;
-          margin: 0;
-          padding: 0;
+        .quantity,
+        .price,
+        .totalPrice {
+          text-align: right;
         }
       }
     }
+    .paymentSection {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px;
+      grid-gap: 0.5em;
+      padding: 15px 20px 15px 40px;
+      border-top: $thinBorder;
+    }
+    .signatureSection {
+      display: grid;
+      grid-template-rows: 100px;
+      padding: 15px 20px 15px 40px;
+    }
+  }
+  footer {
+    height: 100px;
+    border-top: $thickBorder;
   }
 }
+
+@media print {
+  @page {
+    size: auto;
+    margin: 0mm;
+    border: none;
+  }
+
+  //   html,
+  //   body,
+  //   .pageWrapper {
+  //     float: none;
+  //   }
+  //   .header,
+  //   .footer,
+  //   .actionBlock {
+  //     display: none;
+  //   }
+  //   .pageWrapper {
+  //     border: $thickBorder;
+  //     margin: 5px;
+  //     height: 400px;
+  //   }
+
+  //   .breakAfter {
+  //     display: block;
+  //     page-break-after: auto;
+  //     background-color: blue;
+  //     border: $thickBorder;
+  //   }
+
+  //   .breakBefore {
+  //     display: block;
+  //     page-break-before: always;
+  //     break-before: page;
+  //     position: relative;
+  //   }
+}
+
+// @page {
+//   size: auto;
+//   margin: 0mm;
+//   border: none;
+// }
+// @media print {
+//   @page {
+//     margin: 0;
+//     size: auto;
+//     margin: 0mm;
+//     border: none;
+//   }
+//   p {
+//     page-break-after: always;
+//   }
+// }
