@@ -1,8 +1,7 @@
-import {createStore, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-import rootReducer from '../reducers/index';
-// import photoReducer from '../reducers/photoReducer';
+import rootReducer from "../reducers/index";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

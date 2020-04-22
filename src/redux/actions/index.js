@@ -1,33 +1,29 @@
-import {
-  ADD_TO_CART,
-  EDIT_CART_ITEM,
-  REMOVE_CART_ITEM,
-  FETCH_PRODUCTS_BEGIN,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE,
-  UPDATE_INVOICE_INFO,
-} from "../constants/index";
-import axios from "axios";
+import { cartConstants } from "../constants";
+export * from "./product.actions";
 
-export const getVistaProducts = () => {
-  const baseURL =
-    window.location.hostname === "localhost"
-      ? "http://localhost:8880/api/vista/"
-      : "https://www.vistabiomed.com/api/vista/";
+// import { productConstants } from "../constants";
 
-  return (dispatch) => {
-    dispatch(fetchProductsBegin());
-    return axios
-      .get(baseURL + "product/read.php")
-      .then((response) => {
-        dispatch(fetchProductsSuccess(response.data.products));
-      })
-      .catch((err) => {
-        console.log("getVistaProducts :: ERROR : ", err);
-        dispatch(fetchProductsFailure(err));
-      });
-  };
-};
+// import axios from "axios";
+
+// export const getVistaProducts = () => {
+//   const baseURL =
+//     window.location.hostname === "localhost"
+//       ? "http://localhost:8880/api/vista/"
+//       : "https://www.vistabiomed.com/api/vista/";
+
+//   return (dispatch) => {
+//     dispatch(fetchProductsBegin());
+//     return axios
+//       .get(baseURL + "product/read.php")
+//       .then((response) => {
+//         dispatch(fetchProductsSuccess(response.data.products));
+//       })
+//       .catch((err) => {
+//         console.log("getVistaProducts :: ERROR : ", err);
+//         dispatch(fetchProductsFailure(err));
+//       });
+//   };
+// };
 
 export const addToCart = (selectedProduct) => {
   const cartItem = {
@@ -40,28 +36,28 @@ export const addToCart = (selectedProduct) => {
     total_price: 0,
   };
   return {
-    type: ADD_TO_CART,
+    type: cartConstants.ADD_TO_CART,
     payload: cartItem,
   };
 };
 
 export const editCartItem = (selectedProduct) => {
   return {
-    type: EDIT_CART_ITEM,
+    type: cartConstants.EDIT_CART_ITEM,
     payload: selectedProduct,
   };
 };
 
 export const removeCartItem = (selectedProduct) => {
   return {
-    type: REMOVE_CART_ITEM,
+    type: cartConstants.REMOVE_CART_ITEM,
     payload: selectedProduct,
   };
 };
 
 export const updateInvoiceInfo = (invoiceData) => {
   return {
-    type: UPDATE_INVOICE_INFO,
+    type: cartConstants.UPDATE_INVOICE_INFO,
     payload: getInvoiceInfo(invoiceData),
   };
 };
@@ -87,17 +83,17 @@ const getInvoiceInfo = (invoiceData) => {
 };
 
 //-----------
-export const fetchProductsBegin = () => ({
-  type: FETCH_PRODUCTS_BEGIN,
-});
+// export const fetchProductsBegin = () => ({
+//   type: productConstants.FETCH_PRODUCTS_BEGIN,
+// });
 
-export const fetchProductsSuccess = (products) => ({
-  // dispatch({ type: "GET_PHOTOS", payload: response.data.splice(4900) })
-  type: FETCH_PRODUCTS_SUCCESS,
-  payload: { products },
-});
+// export const fetchProductsSuccess = (products) => ({
+//   // dispatch({ type: "GET_PHOTOS", payload: response.data.splice(4900) })
+//   type: productConstants.FETCH_PRODUCTS_SUCCESS,
+//   payload: { products },
+// });
 
-export const fetchProductsFailure = (error) => ({
-  type: FETCH_PRODUCTS_FAILURE,
-  payload: { error },
-});
+// export const fetchProductsFailure = (error) => ({
+//   type: productConstants.FETCH_PRODUCTS_FAILURE,
+//   payload: { error },
+// });

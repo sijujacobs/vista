@@ -1,10 +1,4 @@
-import {
-  GET_CART_ITEMS,
-  ADD_TO_CART,
-  EDIT_CART_ITEM,
-  REMOVE_CART_ITEM,
-  UPDATE_INVOICE_INFO,
-} from "../constants/index";
+import { cartConstants } from "../constants";
 
 const initialState = {
   cartItems: [],
@@ -19,15 +13,15 @@ const initialState = {
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_CART_ITEMS:
+    case cartConstants.GET_CART_ITEMS:
       return Object.assign({}, state, {
         cartItems: state.cartItems.concat(action.payload),
       });
-    case ADD_TO_CART:
+    case cartConstants.ADD_TO_CART:
       return Object.assign({}, state, {
         cartItems: state.cartItems.concat(action.payload),
       });
-    case EDIT_CART_ITEM:
+    case cartConstants.EDIT_CART_ITEM:
       let editedCartItems = state.cartItems.map((item) => {
         if (item.product_id === action.payload.product_id) {
           return {
@@ -44,13 +38,13 @@ const cartReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         cartItems: editedCartItems,
       });
-    case REMOVE_CART_ITEM:
+    case cartConstants.REMOVE_CART_ITEM:
       return Object.assign({}, state, {
         cartItems: state.cartItems.filter(
           (product) => action.payload.product_id !== product.product_id
         ),
       });
-    case UPDATE_INVOICE_INFO:
+    case cartConstants.UPDATE_INVOICE_INFO:
       return Object.assign({}, state, {
         invoiceInfo: action.payload,
       });

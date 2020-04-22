@@ -8,7 +8,7 @@ import "./css/print.css";
 
 class ComponentToPrint extends React.Component {
   render() {
-    const { pages } = this.props;
+    const { pages, invoiceInfo } = this.props;
 
     return (
       <div className="pageWrapper">
@@ -17,9 +17,9 @@ class ComponentToPrint extends React.Component {
           pages.map((p, i) => (
             <PageA4
               key={i}
-              info={p}
+              page={p}
               totalPages={pages.length}
-              items={p.items}
+              invoiceInfo={invoiceInfo}
             />
           ))}
       </div>
@@ -30,7 +30,7 @@ class ComponentToPrint extends React.Component {
 const ReactPrint = (props) => {
   const componentRef = useRef();
 
-  const { cartItems } = props;
+  const { invoiceInfo, cartItems } = props;
   let maxCountPerPage = 12;
   let cartItemsCount = cartItems.length;
   let pageNumber = 0;
@@ -40,15 +40,12 @@ const ReactPrint = (props) => {
     let itemCount = i + 1;
     let page = {
       pageNumber: 0,
-      info: {},
       items: [],
     };
     tempItems.push(cartItems[i]);
     if (itemCount === maxCountPerPage) {
       page.items = tempItems;
       page.pageNumber = ++pageNumber;
-      // console.log("maxItemCount :: pageNumber : ", pageNumber);
-      console.log(" :: page : ", page);
       pages.push(page);
       tempItems = [];
     } else if (itemCount === cartItemsCount) {
@@ -62,11 +59,17 @@ const ReactPrint = (props) => {
 
   return (
     <div>
-      <ReactToPrint
-        trigger={() => <button>Print this out!</button>}
-        content={() => componentRef.current}
+      <div className="printOption">
+        <ReactToPrint
+          trigger={() => <button>Print</button>}
+          content={() => componentRef.current}
+        />
+      </div>
+      <ComponentToPrint
+        ref={componentRef}
+        pages={pages}
+        invoiceInfo={invoiceInfo}
       />
-      <ComponentToPrint ref={componentRef} pages={pages} />
     </div>
   );
 };

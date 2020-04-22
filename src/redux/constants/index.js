@@ -1,18 +1,3 @@
-export const GET_PHOTOS = "GET_PHOTOS";
-export const GET_CART_ITEMS = "GET_CART_ITEMS";
-export const ADD_TO_CART = "ADD_TO_CART";
-export const EDIT_CART_ITEM = "EDIT_CART_ITEM";
-export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
-export const UPDATE_INVOICE_INFO = "UPDATE_INVOICE_INFO";
-
-export const FETCH_PRODUCTS_BEGIN = "FETCH_PRODUCTS_BEGIN";
-export const FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS";
-export const FETCH_PRODUCTS_FAILURE = "FETCH_PRODUCTS_FAILURE";
-
-export const FETCH_INVOICE_BEGIN = "FETCH_INVOICE_BEGIN";
-export const FETCH_INVOICE_SUCCESS = "FETCH_INVOICE_SUCCESS";
-export const FETCH_INVOICE_FAILURE = "FETCH_INVOICE_FAILURE";
-
-export const SAVE_INVOICE_BEGIN = "SAVE_INVOICE_BEGIN";
-export const SAVE_INVOICE_SUCCESS = "SAVE_INVOICE_SUCCESS";
-export const SAVE_INVOICE_FAILURE = "SAVE_INVOICE_FAILURE";
+export * from "./user.constants";
+export * from "./product.constants";
+export * from "./cart.constants";

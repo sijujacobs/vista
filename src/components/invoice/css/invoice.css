@@ -36,25 +36,6 @@
   padding: 15px 0 15px 0;
 }
 
-.invoiceDetails .infoSection .addressField {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 70px 1fr;
-      grid-template-columns: 70px 1fr;
-  grid-gap: 5px;
-  font-size: 11pt;
-}
-
-.invoiceDetails .infoSection .addressField .addressTxtArea {
-  border: 1px solid #5e125c;
-  border-radius: 5px;
-}
-
-.invoiceDetails .infoSection .multilineSpan {
-  height: 50px;
-  width: 100px;
-}
-
 .invoiceDetails .itemSection {
   border-top: 1px solid #5e125c;
   border-bottom: 1px solid #5e125c;
@@ -80,18 +61,36 @@
   color: #000;
 }
 
-.invoiceDetails .paymentSection {
+.invoiceDetails .summarySection {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
   border-bottom: 1px solid #5e125c;
-  padding: 10px 50px 10px 50px;
+  padding: 10px;
+  margin: 5px 45px;
+  font-size: 13px;
 }
 
-.invoiceDetails .paymentSection .rightBlock {
-  text-align: right;
+.invoiceDetails .summarySection .keyLabel,
+.invoiceDetails .summarySection .valueLabel {
+  width: 90px;
+  display: inline-block;
+  margin: 3px;
+}
+
+.invoiceDetails .summarySection .longLabel {
+  display: inline-block;
+}
+
+.invoiceDetails .summarySection .leftBlock {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 .invoiceDetails .actionSection {
@@ -120,28 +119,5 @@
 .invoiceDetails .actionSection .linkButton:hover {
   background-color: #5e125c;
   color: white;
-}
-
-.fieldRow {
-  margin: 5px;
-}
-
-.fieldRow label {
-  width: 75px;
-  display: inline-block;
-  font-size: 13px;
-}
-
-.fieldRow .longLabel {
-  width: 120px;
-  display: inline-block;
-  font-size: 13px;
-}
-
-.fieldRow input {
-  border: 1px solid #5e125c;
-  border-radius: 3px;
-  height: 22px;
-  width: 130px;
 }
 /*# sourceMappingURL=invoice.css.map */

@@ -71,7 +71,7 @@
 }
 
 .cart .cartHeader,
-.cart .paymentSection,
+.cart .summarySection,
 .cart .cartFooter {
   margin: 3px;
   border: 1px solid #555;
@@ -118,41 +118,33 @@
   background-color: #e9bed6;
 }
 
-.cart .paymentSection {
+.cart .summarySection {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
   border-bottom: 1px solid #5e125c;
+  padding: 20px;
 }
 
-.cart .paymentSection .leftBlock {
+.cart .summarySection .keyLabel,
+.cart .summarySection .valueLabel {
+  width: 90px;
+  display: inline-block;
+  margin: 3px;
+}
+
+.cart .summarySection .longLabel {
+  display: inline-block;
+}
+
+.cart .summarySection .leftBlock {
   padding: 10px;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-}
-
-.cart .paymentSection .fieldRow {
-  margin: 3px;
-  width: 250px;
-}
-
-.cart .paymentSection .fieldRow span.label {
-  width: 100px;
-  display: inline-block;
-}
-
-.cart .paymentSection .fieldRow span.longLabel {
-  width: 150px;
-  display: inline-block;
-}
-
-.cart .paymentSection .fieldRow label {
-  width: 100px;
-  display: inline-block;
 }
 /*# sourceMappingURL=cart.css.map */

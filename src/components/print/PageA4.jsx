@@ -1,20 +1,52 @@
 import React from "react";
-// import "./css/print.css";
 const PageA4 = (props) => {
-  const { totalPages, info, items } = props;
-  console.log(" PageA4 ::props : ", props);
-
+  const { invoiceInfo, totalPages, page } = props;
+  console.log("PageA4 :: props : ", props);
   return (
     <div className="pageA4">
       <header>
-        <div>Header</div>
+        <div></div>
       </header>
       <div className="pageBody">
-        {info.pageNumber === 1 && (
+        {page.pageNumber === 1 && (
           <div className="infoSection">
-            <div className="dataBlock "> Left Block</div>
-            <div className="dataBlock">Center</div>
-            <div className="dataBlock">Right</div>
+            <div className="dataBlock">
+              <p className="addressField">
+                <label className="keyLabel">Bill To</label>
+                <span className="multiLineSpan">
+                  Addressline 1, Addressline 2 , City, State, 690514
+                </span>
+              </p>
+              <p className="fieldRow">
+                <label className="keyLabel">Tr No </label>
+                <label className="valueLabel">TR-33-33TRD</label>
+              </p>
+            </div>
+            <div className="dataBlock ">
+              <p className="fieldRow">
+                <label className="keyLabel">Lic No </label>
+                <label className="valueLabel">LN/123/XY55</label>
+              </p>
+              <p className="fieldRow">
+                <label className="keyLabel">Dl No</label>
+                <label className="valueLabel">DL/0094/4320</label>
+              </p>
+            </div>
+            <div className="dataBlock">
+              <p className="fieldRow">
+                <label className="keyLabel">Date </label>
+                <label className="valueLabel">04-18-2020</label>
+              </p>
+
+              <p className="fieldRow">
+                <label className="keyLabel">Invoice No</label>
+                <label className="valueLabel">VB/DXB/001/04182020</label>
+              </p>
+              <p className="fieldRow">
+                <label className="keyLabel">Lpo No </label>
+                <label className="valueLabel">LPO/008/555</label>
+              </p>
+            </div>
           </div>
         )}
 
@@ -25,9 +57,9 @@ const PageA4 = (props) => {
             <div>Price</div>
             <div>Total</div>
           </div>
-          {items &&
-            items.length > 0 &&
-            items.map((item, i) => {
+          {page.items &&
+            page.items.length > 0 &&
+            page.items.map((item, i) => {
               return (
                 <div className="itemBlock" key={i}>
                   <div className="productDesc">
@@ -41,27 +73,69 @@ const PageA4 = (props) => {
               );
             })}
         </div>
-        {info.pageNumber === totalPages && (
+        {page.pageNumber === totalPages && (
           <>
-            <div className="paymentSection">
-              <div>Payment method</div>
-              <div>
-                <div>Subtotal</div>
-                <div>VAT</div>
-                <div>Discount</div>
-                <div>Grand Total</div>
+            <div className="summarySection">
+              <div className="dataBlock">
+                <p>
+                  <label className="longLabel">Payment Method : </label>
+                  <label className="valueLabel">Bank Transfer</label>
+                </p>
+                <p>
+                  <label className="longLabel">Bank </label>
+                </p>
+                <p>
+                  <label className="longLabel">Account # </label>
+                </p>
+                <p>
+                  <label className="longLabel">IFSC </label>
+                </p>
+              </div>
+              <div className="dataBlock rightAlign">
+                <p>
+                  <label className="keyLabel">Sub Total</label>
+                  <label className="valueLabel rightAlign">
+                    {invoiceInfo.subTotal}
+                  </label>
+                </p>
+                <p>
+                  <label className="keyLabel">VAT</label>
+                  <label className="valueLabel rightAlign">
+                    {invoiceInfo.vat}
+                  </label>
+                </p>
+                <p>
+                  <label className="keyLabel">Discount</label>
+                  <label className="valueLabel rightAlign">
+                    {invoiceInfo.discount}
+                  </label>
+                </p>
+                <p>
+                  <label className="keyLabel">Grand Total</label>
+                  <label className="valueLabel rightAlign">
+                    {invoiceInfo.grandTotal}
+                  </label>
+                </p>
               </div>
             </div>
+
             <div className="signatureSection">Signature</div>
           </>
         )}
       </div>
+      <div className="pageCountInfo">
+        (Page : {page.pageNumber}/{totalPages})
+      </div>
+
       <footer>
-        <div>
-          Footer
-          <div>
-            Pages : {info.pageNumber}/{totalPages}
-          </div>
+        <div className="leftSection">
+          <span>Phone : 99899899899 </span>
+        </div>
+        <div className="centerSection centerAlign">
+          <span>Email : sales@vistabiomed.com </span>
+        </div>
+        <div className="rightSection rightAlign">
+          <span>www.vistabiomed.com</span>
         </div>
       </footer>
     </div>

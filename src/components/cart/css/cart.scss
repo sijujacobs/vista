@@ -64,7 +64,7 @@ $magentaColor: rgb(94, 18, 92);
   }
 
   .cartHeader,
-  .paymentSection,
+  .summarySection,
   .cartFooter {
     margin: 3px;
     border: 1px solid #555;
@@ -106,33 +106,25 @@ $magentaColor: rgb(94, 18, 92);
     }
   } //End-Footer
 
-  .paymentSection {
+  .summarySection {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.5em;
     border-bottom: 1px solid $magentaColor;
-
+    padding: 20px;
+    .keyLabel,
+    .valueLabel {
+      width: 90px;
+      display: inline-block;
+      margin: 3px;
+    }
+    .longLabel {
+      display: inline-block;
+    }
     .leftBlock {
       padding: 10px;
       display: grid;
       justify-content: start;
     }
-
-    .fieldRow {
-      margin: 3px;
-      width: 250px;
-      span.label {
-        width: 100px;
-        display: inline-block;
-      }
-      span.longLabel {
-        width: 150px;
-        display: inline-block;
-      }
-      label {
-        width: 100px;
-        display: inline-block;
-      }
-    }
-  } //End-PaymentSection
+  } //End-SummarySection
 } //End of Cart

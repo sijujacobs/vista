@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getVistaProducts } from "../../redux/actions/index";
+import { productActions } from "../../redux/actions";
 import ProductList from "./ProductList";
 import Cart from "../cart/Cart";
 import "./css/product.css";
@@ -28,7 +28,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    getProducts: () => dispatch(getVistaProducts()),
+    getProducts: () => dispatch(productActions.getProducts()),
   };
 };
 

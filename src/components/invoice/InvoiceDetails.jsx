@@ -16,47 +16,48 @@ const InvoiceDetails = (props) => {
     <div className="invoiceDetails">
       <p className="title">Invoice</p>
       <div className="infoSection">
-        <div className="leftBlock">
+        <div className="dataBlock">
           <p className="fieldRow">
-            <label>Lic #</label>
-            <label>111111</label>
-          </p>
-          <p className="fieldRow">
-            <label>Dl #</label>
-            <label>22222</label>
-          </p>
-          <p className="fieldRow">
-            <label>Lpo #</label>
-            <label>333333</label>
-          </p>
-        </div>
-        <div className="block">
-          <p className="fieldRow">
-            <label>Date</label>
-            <input type="date" />
-          </p>
-          <p className="fieldRow">
-            <label>Invoice #</label>
-            <input
-              type="text"
-              value="VB/DXB/001/04182020"
-              onChange={invoiceChangeHandler}
-            />
-          </p>
-        </div>
-        <div className="rightBlock">
-          <p className="fieldRow">
-            <label>Tr #</label>
+            <label className="keyLabel">Tr No</label>
             <input type="text" />
           </p>
           <p className="fieldRow addressField">
-            <label>Bill To</label>
+            <label className="keyLabel">Bill To</label>
             <textarea
               className="addressTxtArea"
               rows={4}
               cols={22}
               onChange={addressChangeHandler}
             ></textarea>
+          </p>
+        </div>
+
+        <div className="dataBlock">
+          <p className="fieldRow">
+            <label className="keyLabel">Lic No</label>
+            <label className="valueLabel">LN/123/XY55</label>
+          </p>
+          <p className="fieldRow">
+            <label className="keyLabel">Dl No</label>
+            <label className="valueLabel">DL/0094/4320</label>
+          </p>
+        </div>
+        <div className="dataBlock">
+          <p className="fieldRow">
+            <label className="keyLabel">Date</label>
+            <input type="date" />
+          </p>
+          <p className="fieldRow">
+            <label className="keyLabel">Invoice No</label>
+            <input
+              type="text"
+              value="VB/DXB/001/04182020"
+              onChange={invoiceChangeHandler}
+            />
+          </p>
+          <p className="fieldRow">
+            <label className="keyLabel">Lpo No </label>
+            <label className="valueLabel">LPO/008/555</label>
           </p>
         </div>
       </div>
@@ -72,32 +73,49 @@ const InvoiceDetails = (props) => {
           cartItems.length > 0 &&
           cartItems.map((p) => <InvoiceItem key={p.product_id} cartItem={p} />)}
       </div>
-      <div className="paymentSection">
-        <div className="leftBlock">
-          <p className="fieldRow">
-            <span className="longLabel">Payment Method</span>
-            <label>PayPal</label>
+
+      <div className="summarySection">
+        <div className="dataBlock">
+          <p>
+            <label className="longLabel">Payment Method : </label>
+            <label className="valueLabel">Bank Transfer</label>
+          </p>
+          <p>
+            <label className="longLabel">Bank </label>
+          </p>
+          <p>
+            <label className="longLabel">Account # </label>
+          </p>
+          <p>
+            <label className="longLabel">IFSC </label>
           </p>
         </div>
-        <div className="rightBlock">
-          <p className="fieldRow">
-            <label>Sub Total</label>
-            <label>{invoiceInfo.subTotal}</label>
+        <div className="dataBlock rightAlign">
+          <p>
+            <label className="keyLabel">Sub Total</label>
+            <label className="valueLabel rightAlign">
+              {invoiceInfo.subTotal}
+            </label>
           </p>
-          <p className="fieldRow">
-            <label>VAT</label>
-            <label>{invoiceInfo.vat}</label>
+          <p>
+            <label className="keyLabel">VAT</label>
+            <label className="valueLabel rightAlign">{invoiceInfo.vat}</label>
           </p>
-          <p className="fieldRow">
-            <label>Discount</label>
-            <label>{invoiceInfo.discount}</label>
+          <p>
+            <label className="keyLabel">Discount</label>
+            <label className="valueLabel rightAlign">
+              {invoiceInfo.discount}
+            </label>
           </p>
-          <p className="fieldRow">
-            <label>Grand Total</label>
-            <label>{invoiceInfo.grandTotal}</label>
+          <p>
+            <label className="keyLabel">Grand Total</label>
+            <label className="valueLabel rightAlign">
+              {invoiceInfo.grandTotal}
+            </label>
           </p>
         </div>
       </div>
+
       <div className="actionSection">
         <div className="btn-group">
           <NavLink className="linkButton" to="/print">

@@ -31,21 +31,6 @@ $magentaColor: rgb(94, 18, 92);
     justify-items: center;
     border-top: 1px solid $magentaColor;
     padding: 15px 0 15px 0;
-
-    .addressField {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      grid-gap: 5px;
-      font-size: 11pt;
-      .addressTxtArea {
-        border: 1px solid $magentaColor;
-        border-radius: 5px;
-      }
-    }
-    .multilineSpan {
-      height: 50px;
-      width: 100px;
-    }
   }
 
   .itemSection {
@@ -70,17 +55,29 @@ $magentaColor: rgb(94, 18, 92);
       color: #000;
     }
   }
-  .paymentSection {
+  .summarySection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr 1fr;
     grid-gap: 0.5em;
     border-bottom: 1px solid $magentaColor;
-    padding: 10px 50px 10px 50px;
-
-    .rightBlock {
-      text-align: right;
+    padding: 10px;
+    margin: 5px 45px;
+    font-size: 13px;
+    .keyLabel,
+    .valueLabel {
+      width: 90px;
+      display: inline-block;
+      margin: 3px;
     }
-  }
+    .longLabel {
+      display: inline-block;
+    }
+    .leftBlock {
+      padding: 10px;
+      display: grid;
+      justify-content: start;
+    }
+  } //End-SummarySection
 
   .actionSection {
     display: grid;
@@ -106,24 +103,3 @@ $magentaColor: rgb(94, 18, 92);
     }
   }
 } // End-InvoiceDetails
-
-.fieldRow {
-  margin: 5px;
-  label {
-    width: 75px;
-    display: inline-block;
-    font-size: 13px;
-  }
-
-  .longLabel {
-    width: 120px;
-    display: inline-block;
-    font-size: 13px;
-  }
-  input {
-    border: 1px solid $magentaColor;
-    border-radius: 3px;
-    height: 22px;
-    width: 130px;
-  }
-}

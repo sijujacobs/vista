@@ -50,30 +50,32 @@ const Cart = (props) => {
           {cartItems &&
             cartItems.length > 0 &&
             cartItems.map((p) => <CartItem key={p.product_id} cartItem={p} />)}
-          <div className="paymentSection">
-            <div className="leftBlock">
-              <p className="fieldRow">
-                <span className="longLabel">Payment Method</span>
-                <label>PayPal</label>
+          <div className="summarySection">
+            <div className="dataBlock">
+              <p>
+                <label className="longLabel">Payment Method : </label>
+                <label className="valueLabel">PayPal</label>
               </p>
             </div>
-            <div className="rightAlign">
-              <p className="fieldRow">
-                <label>Sub Total</label>
-                <label>{invoiceInfo.subTotal}</label>
+            <div className="dataBlock">
+              <p>
+                <label className="keyLabel">Sub Total</label>
+                <label className="valueLabel rightAlign">
+                  {invoiceInfo.subTotal}
+                </label>
               </p>
-              <p className="fieldRow">
-                <label>VAT</label>
-                <label>
+              <p>
+                <label className="keyLabel">VAT</label>
+                <label className="valueLabel rightAlign">
                   <input
-                    className="numericStepper vat"
+                    className="numericStepper vat rightAlign"
                     type="number"
                     onChange={inputChangeHandler}
                   />
                 </label>
               </p>
-              <p className="fieldRow">
-                <label>Discount</label>
+              <p>
+                <label className="keyLabel">Discount</label>
                 <label>
                   <input
                     className="numericStepper discount hidden"
@@ -82,9 +84,11 @@ const Cart = (props) => {
                   />
                 </label>
               </p>
-              <p className="fieldRow">
-                <label>Grand Total</label>
-                <label>{invoiceInfo.grandTotal}</label>
+              <p>
+                <label className="keyLabel">Grand Total</label>
+                <label className="valueLabel rightAlign">
+                  {invoiceInfo.grandTotal}
+                </label>
               </p>
             </div>
           </div>
