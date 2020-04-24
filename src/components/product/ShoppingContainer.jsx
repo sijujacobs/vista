@@ -24,6 +24,7 @@ const mapStateToProps = (state) => {
     products: state.productReducer.products,
     loading: state.productReducer.loading,
     cartItems: state.cartReducer.cartItems,
+    loggedUser: state.userReducer.loggedUser,
   };
 };
 const mapDispatchToProps = (dispatch) => {

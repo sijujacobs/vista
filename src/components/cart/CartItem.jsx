@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { editCartItem, removeCartItem } from "../../redux/actions/index";
+import { cartActions } from "../../redux/actions";
 
 const CartItem = (props) => {
   const { cartItem, editCartItem, removeCartItem } = props;
@@ -70,9 +70,10 @@ const CartItem = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    editCartItem: (selectedProduct) => dispatch(editCartItem(selectedProduct)),
+    editCartItem: (selectedProduct) =>
+      dispatch(cartActions.editCartItem(selectedProduct)),
     removeCartItem: (selectedProduct) =>
-      dispatch(removeCartItem(selectedProduct)),
+      dispatch(cartActions.removeCartItem(selectedProduct)),
   };
 };
 

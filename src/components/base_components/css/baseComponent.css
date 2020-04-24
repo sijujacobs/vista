@@ -1,0 +1,51 @@
+.inputField {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 120px 5px minmax(150px, 200px);
+      grid-template-columns: 120px 5px minmax(150px, 200px);
+  grid-gap: 5px;
+  margin-top: 6px;
+}
+
+.inputField .label {
+  padding-top: 2px;
+}
+
+.inputField .labelColon {
+  font-size: 12pt;
+}
+
+.inputField input {
+  border-radius: 3px;
+  border: 1px solid #777;
+  height: 22px;
+  padding-left: 3px;
+}
+
+.actionButton button {
+  padding: 5px;
+  min-width: 120px;
+}
+
+.radioButtonGroup {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.radioButtonGroup .radioButton {
+  width: 140px;
+}
+
+.radioButtonGroup .radioButton input {
+  margin: 1px 6px 1px 5px;
+}
+
+.radioButtonGroup.vertical .radioButton {
+  display: block;
+}
+
+.radioButtonGroup.horizontal .radioButton {
+  display: inline-block;
+}
+/*# sourceMappingURL=baseComponent.css.map */

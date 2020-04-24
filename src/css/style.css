@@ -39,6 +39,14 @@
   visibility: hidden;
 }
 
+.include {
+  display: block;
+}
+
+.exclude {
+  display: none;
+}
+
 .fieldRow {
   margin: 3px;
   width: 250px;

@@ -1,0 +1,29 @@
+.login {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login .loginSection {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px;
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=login.css.map */

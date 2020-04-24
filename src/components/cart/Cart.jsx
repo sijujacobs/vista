@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import CartItem from "./CartItem";
-import { updateInvoiceInfo } from "../../redux/actions/index";
+import { cartActions } from "../../redux/actions";
 
 import { NavLink } from "react-router-dom";
 import "./css/cart.css";
@@ -113,7 +113,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateInvoiceInfo: (invoiceData) =>
-      dispatch(updateInvoiceInfo(invoiceData)),
+      dispatch(cartActions.updateInvoiceInfo(invoiceData)),
   };
 };
 

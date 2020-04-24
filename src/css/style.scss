@@ -40,6 +40,13 @@ $boxShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   visibility: hidden;
 }
 
+.include {
+  display: block;
+}
+.exclude {
+  display: none;
+}
+
 .fieldRow {
   margin: 3px;
   width: 250px;
@@ -58,6 +65,7 @@ $boxShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     width: 100px;
   }
 }
+
 .addressField {
   display: grid;
   grid-template-columns: 55px 1fr;

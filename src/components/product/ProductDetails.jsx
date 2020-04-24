@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../../redux/actions/index";
+import { cartActions } from "../../redux/actions";
 
 const ProductDetails = (props) => {
   const addToCartHandler = (selectedProduct) => {
@@ -47,7 +47,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (selectedProduct) => dispatch(addToCart(selectedProduct)),
+    // addToCart: (selectedProduct) => dispatch(addToCart(selectedProduct)),
+    addToCart: (selectedProduct) =>
+      dispatch(cartActions.addToCart(selectedProduct)),
   };
 };
 

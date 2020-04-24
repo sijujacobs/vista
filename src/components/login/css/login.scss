@@ -1,0 +1,19 @@
+$boxShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+.login {
+  * {
+    box-sizing: border-box;
+  }
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  .loginSection {
+    display: grid;
+    grid-gap: 5px;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    box-shadow: $boxShadow;
+  }
+}
