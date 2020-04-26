@@ -13,6 +13,7 @@ $transition: all 0.5s ease;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 0.5em;
+  background-color: $magentaColor;
 }
 
 .sectionHeader {
@@ -43,6 +44,7 @@ $transition: all 0.5s ease;
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
+  background: #fff;
 }
 
 // .productDetails {

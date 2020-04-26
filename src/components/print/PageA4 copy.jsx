@@ -1,8 +1,7 @@
 import React from "react";
-
-import InputField from "../../components/base_components/InputField";
 const PageA4 = (props) => {
-  const { invoiceInfo, totalPages, page, appInfo } = props;
+  const { invoiceInfo, totalPages, page } = props;
+  console.log("PageA4 :: props : ", props);
   return (
     <div className="pageA4">
       <header>
@@ -12,46 +11,41 @@ const PageA4 = (props) => {
         {page.pageNumber === 1 && (
           <div className="infoSection">
             <div className="dataBlock">
-              <InputField
-                labelValue="TR. No"
-                inputValue="TR/5044/9320"
-                isReadOnly={true}
-              />
               <p className="addressField">
                 <label className="keyLabel">Bill To</label>
                 <span className="multiLineSpan">
                   Addressline 1, Addressline 2 , City, State, 690514
                 </span>
               </p>
+              <p className="fieldRow">
+                <label className="keyLabel">Tr No </label>
+                <label className="valueLabel">TR-33-33TRD</label>
+              </p>
             </div>
             <div className="dataBlock ">
-              <InputField
-                labelValue="Lic. No"
-                inputValue="LN/123/XY55"
-                isReadOnly={true}
-              />
-              <InputField
-                labelValue="Dl. No"
-                inputValue="DL/0094/4320"
-                isReadOnly={true}
-              />
+              <p className="fieldRow">
+                <label className="keyLabel">Lic No </label>
+                <label className="valueLabel">LN/123/XY55</label>
+              </p>
+              <p className="fieldRow">
+                <label className="keyLabel">Dl No</label>
+                <label className="valueLabel">DL/0094/4320</label>
+              </p>
             </div>
             <div className="dataBlock">
-              <InputField
-                labelValue="Date"
-                inputValue="04-18-2020"
-                isReadOnly={true}
-              />
-              <InputField
-                labelValue="Invoice No"
-                inputValue="VB/DXB/001/04182020"
-                isReadOnly={true}
-              />
-              <InputField
-                labelValue="LPO. No"
-                inputValue="LPO/008/555"
-                isReadOnly={true}
-              />
+              <p className="fieldRow">
+                <label className="keyLabel">Date </label>
+                <label className="valueLabel">04-18-2020</label>
+              </p>
+
+              <p className="fieldRow">
+                <label className="keyLabel">Invoice No</label>
+                <label className="valueLabel">VB/DXB/001/04182020</label>
+              </p>
+              <p className="fieldRow">
+                <label className="keyLabel">Lpo No </label>
+                <label className="valueLabel">LPO/008/555</label>
+              </p>
             </div>
           </div>
         )}
@@ -135,26 +129,16 @@ const PageA4 = (props) => {
 
       <footer>
         <div className="leftSection">
-          <span>Phone : {appInfo.phone1}</span>
+          <span>Phone : 99899899899 </span>
         </div>
         <div className="centerSection centerAlign">
-          <span>Email : {appInfo.email}</span>
+          <span>Email : sales@vistabiomed.com </span>
         </div>
         <div className="rightSection rightAlign">
-          <span>{appInfo.website}</span>
+          <span>www.vistabiomed.com</span>
         </div>
       </footer>
     </div>
   );
 };
 export default PageA4;
-
-// const mapStateToProps = (state) => {
-//   return {
-//     cartItems: state.cartReducer.cartItems,
-//     invoiceInfo: state.cartReducer.invoiceInfo,
-//   };
-// };
-
-// const connectedInvoiceDetails = connect(mapStateToProps)(PageA4);
-// export default connectedInvoiceDetails;

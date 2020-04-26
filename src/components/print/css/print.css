@@ -4,6 +4,25 @@
   text-align: right;
 }
 
+.printOption .linkButton {
+  width: 100px;
+  height: 25px;
+  background: #fff;
+  font-size: 10pt;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 4px;
+  border: 1px solid #5e125c;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+
+.printOption .linkButton:hover {
+  background-color: #e9bed6;
+}
+
 .pageA4 {
   background: white;
   display: block;
@@ -32,12 +51,16 @@
 .pageA4 .pageBody .infoSection {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 32% 32% 33%;
-      grid-template-columns: 32% 32% 33%;
+  -ms-grid-columns: 25% 25% 25%;
+      grid-template-columns: 25% 25% 25%;
   grid-gap: 0.5em;
-  justify-items: left;
-  padding: 45px 0 35px 45px;
+  padding: 45px 0 35px 0;
   border-bottom: 1px solid #eed6ed;
+  font-size: 13px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
 }
 
 .pageA4 .pageBody .itemsSection {

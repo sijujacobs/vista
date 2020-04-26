@@ -5,23 +5,31 @@ import { NavLink } from "react-router-dom";
 import "./css/invoice.css";
 import InvoiceItem from "./InvoiceItem";
 
+import InputField from "../../components/base_components/InputField";
+
 const InvoiceDetails = (props) => {
   const { cartItems, invoiceInfo } = props;
 
   const addressChangeHandler = (e) => {};
   const actionButtonHandler = (e) => {};
-  const invoiceChangeHandler = (e) => {};
+  // const invoiceChangeHandler = (e) => {};
+
+  const setInputData = (fieldKey, fieldValue) => {
+    if (fieldKey === "trno") {
+    }
+  };
 
   return (
     <div className="invoiceDetails">
       <p className="title">Invoice</p>
       <div className="infoSection">
         <div className="dataBlock">
-          <p className="fieldRow">
-            <label className="keyLabel">Tr No</label>
-            <input type="text" />
-          </p>
-          <p className="fieldRow addressField">
+          <InputField
+            labelValue="TR. No"
+            inputValue="TR/5044/9320"
+            isReadOnly={true}
+          />
+          <p className="addressField">
             <label className="keyLabel">Bill To</label>
             <textarea
               className="addressTxtArea"
@@ -33,32 +41,37 @@ const InvoiceDetails = (props) => {
         </div>
 
         <div className="dataBlock">
-          <p className="fieldRow">
-            <label className="keyLabel">Lic No</label>
-            <label className="valueLabel">LN/123/XY55</label>
-          </p>
-          <p className="fieldRow">
-            <label className="keyLabel">Dl No</label>
-            <label className="valueLabel">DL/0094/4320</label>
-          </p>
+          <InputField
+            labelValue="Lic. No"
+            inputValue="DL/0094/4320"
+            isReadOnly={true}
+          />
+          <InputField
+            labelValue="Dl. No"
+            inputValue="DL/0094/4320"
+            isReadOnly={true}
+          />
         </div>
         <div className="dataBlock">
-          <p className="fieldRow">
-            <label className="keyLabel">Date</label>
-            <input type="date" />
-          </p>
-          <p className="fieldRow">
-            <label className="keyLabel">Invoice No</label>
-            <input
-              type="text"
-              value="VB/DXB/001/04182020"
-              onChange={invoiceChangeHandler}
-            />
-          </p>
-          <p className="fieldRow">
-            <label className="keyLabel">Lpo No </label>
-            <label className="valueLabel">LPO/008/555</label>
-          </p>
+          <InputField
+            labelValue="Date"
+            inputType="date"
+            onChangeHandler={(val) => setInputData("invodate", val)}
+          />
+          <InputField
+            labelValue="Invoice. No"
+            inputType="text"
+            inputPlaceholder="Invoice Number"
+            inputValue="VB/DXB/001/04182020"
+            onChangeHandler={(val) => setInputData("invono", val)}
+          />
+          <InputField
+            labelValue="LPO. No"
+            inputType="text"
+            inputPlaceholder="LPO Number"
+            inputValue="LPO/008/555"
+            onChangeHandler={(val) => setInputData("lpono", val)}
+          />
         </div>
       </div>
 

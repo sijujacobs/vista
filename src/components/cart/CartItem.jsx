@@ -31,40 +31,47 @@ const CartItem = (props) => {
   };
 
   const removeItemHandler = () => {
+    cartItem.inProp = false;
     removeCartItem(cartItem);
   };
   return (
-    <div className="cartItem">
-      <div className="productTitle">
-        <div className="productName">
-          {cartItem.product_name}
-          <span className="productCode"> {cartItem.product_code}</span>
+    <>
+      <div className="cartItem">
+        <div className="productTitle">
+          <div className="productName">
+            {cartItem.product_name}
+            <span className="productCode">{cartItem.product_code}</span>
+          </div>
+          <span className="productDesc">{cartItem.product_description}</span>
         </div>
-        <span className="productDesc">{cartItem.product_description}</span>
+        <div className="gridCol">
+          <input
+            className="numericStepper quantity"
+            type="number"
+            min="1"
+            value={cartItem.quantity}
+            onChange={inputChangeHandler}
+          />
+        </div>
+        <div className="gridCol">
+          <input
+            className="numericStepper unitPrice"
+            type="number"
+            min="1"
+            value={cartItem.product_price}
+            onChange={inputChangeHandler}
+          />
+        </div>
+        <div className="gridCol rightAlign">
+          <div>{cartItem.total_price}</div>
+        </div>
+        <div className="action">
+          <span className="removeIcon" onClick={removeItemHandler}>
+            &#10005;
+          </span>
+        </div>
       </div>
-      <div className="gridCol">
-        <input
-          className="numericStepper quantity"
-          type="number"
-          onChange={inputChangeHandler}
-        />
-      </div>
-      <div className="gridCol">
-        <input
-          className="numericStepper unitPrice"
-          type="number"
-          onChange={inputChangeHandler}
-        />
-      </div>
-      <div className="gridCol rightAlign">
-        <div>{cartItem.total_price}</div>
-      </div>
-      <div className="action">
-        <span className="removeIcon" onClick={removeItemHandler}>
-          &#10005;
-        </span>
-      </div>
-    </div>
+    </>
   );
 };
 

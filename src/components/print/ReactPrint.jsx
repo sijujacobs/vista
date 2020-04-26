@@ -4,12 +4,13 @@ import ReactToPrint from "react-to-print";
 import { connect } from "react-redux";
 import PageA4 from "./PageA4";
 
+import { NavLink } from "react-router-dom";
+
 import "./css/print.css";
 
 class ComponentToPrint extends React.Component {
   render() {
-    const { pages, invoiceInfo } = this.props;
-
+    const { pages, invoiceInfo, appInfo } = this.props;
     return (
       <div className="pageWrapper">
         {pages &&
@@ -20,6 +21,7 @@ class ComponentToPrint extends React.Component {
               page={p}
               totalPages={pages.length}
               invoiceInfo={invoiceInfo}
+              appInfo={appInfo}
             />
           ))}
       </div>
@@ -30,7 +32,7 @@ class ComponentToPrint extends React.Component {
 const ReactPrint = (props) => {
   const componentRef = useRef();
 
-  const { invoiceInfo, cartItems } = props;
+  const { invoiceInfo, cartItems, appInfo } = props;
   let maxCountPerPage = 12;
   let cartItemsCount = cartItems.length;
   let pageNumber = 0;
@@ -60,6 +62,9 @@ const ReactPrint = (props) => {
   return (
     <div>
       <div className="printOption">
+        <NavLink to="/invoice" className="linkButton">
+          Edit
+        </NavLink>
         <ReactToPrint
           trigger={() => <button>Print</button>}
           content={() => componentRef.current}
@@ -69,6 +74,7 @@ const ReactPrint = (props) => {
         ref={componentRef}
         pages={pages}
         invoiceInfo={invoiceInfo}
+        appInfo={appInfo}
       />
     </div>
   );
@@ -78,6 +84,7 @@ const mapStateToProps = (state) => {
   return {
     cartItems: state.cartReducer.cartItems,
     invoiceInfo: state.cartReducer.invoiceInfo,
+    appInfo: state.appReducer.appInfo,
   };
 };
 

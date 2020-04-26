@@ -9,6 +9,24 @@ $boxShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   margin: 20px;
   width: 95%;
   text-align: right;
+
+  .linkButton {
+    width: 100px;
+    height: 25px;
+    background: #fff;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 4px;
+    border: 1px solid #5e125c;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    &:hover {
+      background-color: rgb(233, 190, 214);
+    }
+  }
 }
 .pageA4 {
   * {
@@ -31,11 +49,13 @@ $boxShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 
     .infoSection {
       display: grid;
-      grid-template-columns: 32% 32% 33%;
+      grid-template-columns: 25% 25% 25%;
       grid-gap: 0.5em;
-      justify-items: left;
-      padding: 45px 0 35px 45px;
-      border-bottom: $thinBorder;
+      padding: 45px 0 35px 0;
+      border-bottom: 1px solid #eed6ed;
+      font-size: 13px;
+      justify-content: center;
+      justify-items: center;
     }
     .itemsSection {
       display: grid;

@@ -9,10 +9,15 @@
 
 .inputField .label {
   padding-top: 2px;
+  text-align: right;
 }
 
 .inputField .labelColon {
   font-size: 12pt;
+}
+
+.inputField .readOnlySpan {
+  padding-top: 2px;
 }
 
 .inputField input {

@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import CartItem from "./CartItem";
 import { cartActions } from "../../redux/actions";
 import { NavLink } from "react-router-dom";
@@ -47,15 +45,9 @@ const Cart = (props) => {
       </div>
       <div className="cartBody">
         <div className="scrollArea">
-          <TransitionGroup component="div">
-            {cartItems &&
-              cartItems.length > 0 &&
-              cartItems.map((item, i) => (
-                <CSSTransition key={i} timeout={300} classNames="transition">
-                  <CartItem cartItem={item} />
-                </CSSTransition>
-              ))}
-          </TransitionGroup>
+          {cartItems &&
+            cartItems.length > 0 &&
+            cartItems.map((p, i) => <CartItem key={i} cartItem={p} />)}
           <div className="summarySection">
             <div className="dataBlock">
               <p>
@@ -76,8 +68,6 @@ const Cart = (props) => {
                   <input
                     className="numericStepper vat rightAlign"
                     type="number"
-                    min="1"
-                    value={invoiceInfo && invoiceInfo.vat ? invoiceInfo.vat : 0}
                     onChange={inputChangeHandler}
                   />
                 </label>
@@ -88,12 +78,6 @@ const Cart = (props) => {
                   <input
                     className="numericStepper discount hidden"
                     type="number"
-                    min="1"
-                    value={
-                      invoiceInfo && invoiceInfo.discount
-                        ? invoiceInfo.discount
-                        : 0
-                    }
                     onChange={inputChangeHandler}
                   />
                 </label>

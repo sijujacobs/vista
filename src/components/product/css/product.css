@@ -9,6 +9,7 @@
   -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 0.5em;
+  background-color: #5e125c;
 }
 
 .sectionHeader {
@@ -43,6 +44,7 @@
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
+  background: #fff;
 }
 
 .productDetails {

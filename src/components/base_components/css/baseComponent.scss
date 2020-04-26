@@ -6,9 +6,14 @@
 
   .label {
     padding-top: 2px;
+    text-align: right;
   }
   .labelColon {
     font-size: 12pt;
+  }
+
+  .readOnlySpan {
+    padding-top: 2px;
   }
 
   input {

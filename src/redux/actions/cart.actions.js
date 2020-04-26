@@ -28,6 +28,7 @@ const addToCart = (selectedProduct) => {
     product_price: selectedProduct.product_price,
     quantity: 0,
     total_price: 0,
+    inProp: true,
   };
   return {
     type: cartConstants.ADD_TO_CART,

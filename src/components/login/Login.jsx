@@ -111,12 +111,11 @@ const Login = (props) => {
     },
   ];
 
+  // className={
+  //   window.location.hostname === "www.vistabiomed.com" ? "exclude" : "login"
+  // }
   return (
-    <div
-      className={
-        window.location.hostname === "www.vistabiomed.com" ? "exclude" : "login"
-      }
-    >
+    <div className="login">
       <div className="loginSection">
         <RadioButtonGroup
           layout="horizontal"

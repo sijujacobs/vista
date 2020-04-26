@@ -9,6 +9,7 @@ const InputField = (props) => {
     inputValue,
     onChangeHandler,
     isHidden,
+    isReadOnly,
   } = props;
   return (
     <div className={"inputField " + (isHidden ? "hidden" : "")}>
@@ -16,12 +17,16 @@ const InputField = (props) => {
         {labelValue}
       </label>
       <label className="labelColon">:</label>
-      <input
-        type={inputType}
-        placeholder={inputPlaceholder}
-        value={inputValue}
-        onChange={(e) => onChangeHandler(e.target.value)}
-      />
+      {isReadOnly ? (
+        <span className="readOnlySpan">{inputValue}</span>
+      ) : (
+        <input
+          type={inputType}
+          placeholder={inputPlaceholder}
+          value={inputValue}
+          onChange={(e) => onChangeHandler(e.target.value)}
+        />
+      )}
     </div>
   );
 };
